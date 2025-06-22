@@ -5,3 +5,42 @@ environments:
 - name: dev
 - name: staging
 - name: prod
+plugins:
+  extractors:
+  - name: tap-rest-api-msdk
+    variant: widen
+    pip_url: tap-rest-api-msdk
+    config:
+      api_url: https://api.yuman.io
+      auth_method: bearer_token
+      bearer_token: ${YUMAN_BEARER_TOKEN}
+      pagination_request_style: page_number_paginator
+      pagination_response_style: default
+      pagination_page_size: 100
+      pagination_initial_offset: 1
+      pagination_limit_per_page_param: per_page
+      pagination_page_number_field: page
+      next_page_token_path: $.page
+      request_timeout: 300
+      streams:
+        - name: yuman_clients
+          path: /v1/clients
+          records_path: $.items[*]
+          primary_keys: [id]
+          schema: extract/schemas/yuman_clients.json
+          replication_key: updated_at
+          params:
+            per_page: 100
+            embed: "fields,category,sites,contacts"
+            
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: ${POSTGRES_DATABASE}
+      default_target_schema: ${POSTGRES_SCHEMA}
