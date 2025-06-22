@@ -1,0 +1,176 @@
+{
+  "plugin_type": "extractors",
+  "name": "tap-oracle",
+  "namespace": "tap_oracle",
+  "variant": "s7clarke10",
+  "label": "Oracle",
+  "docs": "https://hub.meltano.com/extractors/tap-oracle--s7clarke10",
+  "repo": "https://github.com/s7clarke10/pipelinewise-tap-oracle",
+  "pip_url": "git+https://github.com/s7clarke10/pipelinewise-tap-oracle.git",
+  "description": "Cloud Database",
+  "logo_url": "https://hub.meltano.com/assets/logos/extractors/oracle.png",
+  "capabilities": [
+    "catalog",
+    "discover",
+    "log-based",
+    "state"
+  ],
+  "settings_group_validation": [
+    [
+      "host",
+      "password",
+      "port",
+      "sid",
+      "user"
+    ],
+    [
+      "host",
+      "password",
+      "port",
+      "service_name",
+      "user"
+    ]
+  ],
+  "settings": [
+    {
+      "name": "common_password",
+      "kind": "string",
+      "label": "Common Password",
+      "description": "Support for a common user/password for working with pluggable databases (PDB).",
+      "sensitive": true
+    },
+    {
+      "name": "common_service_name",
+      "label": "Common Service Name",
+      "description": "Service name when working with pluggable databases (PDB)."
+    },
+    {
+      "name": "common_sid",
+      "label": "Common SID",
+      "description": "SID when working with pluggable databases (PDB)."
+    },
+    {
+      "name": "common_user",
+      "label": "Common User",
+      "description": "Support for a common user/password for working with pluggable databases (PDB). Every common user can connect to an perform operations within the root database, and within any PDB in which it has privileges."
+    },
+    {
+      "name": "cursor_array_size",
+      "kind": "integer",
+      "label": "Cursor Array Size",
+      "description": "A numeric setting adjusting the internal buffersize. The common query tuning scenario is for SELECT statements that return a large number of rows over a slow network. Increasing arraysize can improve performance by reducing the number of round-trips to the database. However increasing this value increases the amount of memory required."
+    },
+    {
+      "name": "default_replication_method",
+      "label": "Default Replication Method",
+      "description": "The default replication method to use if one is not automatically set on the stream. Options - 'LOG_BASED', 'FULL_TABLE', 'INCREMENTAL'."
+    },
+    {
+      "name": "filter_schemas",
+      "label": "Filter Schemas",
+      "description": "A comma separated list of schema names to scan. Used to improve the"
+    },
+    {
+      "name": "filter_tables",
+      "kind": "array",
+      "label": "Filter Tables",
+      "description": "An array of tables `SCHEMA-TABLE1` to select from. Used to imprive the performance of discovery."
+    },
+    {
+      "name": "host",
+      "label": "Host",
+      "description": "Your Oracle host."
+    },
+    {
+      "name": "logminer_call_timeout",
+      "kind": "integer",
+      "label": "Logminer Call Timeout",
+      "description": "The timeout to use when doing log based replication, in milliseconds. Default, None."
+    },
+    {
+      "name": "logminer_dynamic_scn_window",
+      "kind": "boolean",
+      "label": "Logminer Dynamic Scn Window",
+      "description": "A boolean whether to use a dynamic scan window for log based replication. Default, False."
+    },
+    {
+      "name": "logminer_iter_with_reduction_factor",
+      "kind": "integer",
+      "label": "Logminer Iter With Reduction Factor",
+      "description": "The reduction factor to use when using log based replication. Default, 10."
+    },
+    {
+      "name": "offset_value",
+      "kind": "integer",
+      "label": "Offset Value",
+      "description": "To avoid problems with uncommitted changes being read, you can set offset_value to add to the value found in the STATE for INCREMENTAL loads.\nIf the value provided is for a datetime replication key then the offset_value is read as seconds to offset by, otherwise the value is used as provided.\nUsing offset_value < 0 would result in an overlapping set of records being read each time the tap is run.\nUsing offset_value > 0 may result in data being missed. However it can be useful if a period (month-year) is being used.\nThis prevents the tap from using period >= last-read-period and doubling up on the extract.\nUsage (offsetting by +1 day in seconds = 24*3600).\n"
+    },
+    {
+      "name": "ora_python_driver_type",
+      "kind": "options",
+      "value": "cx",
+      "label": "Oracle Python Driver Type / Mode",
+      "description": "Determines which Oracle Library Driver and mode is used by tap-oracle. cx=CX_Oracle, thin=oracleDB (No SQL Client), thick=oracleDB (SQL Client). Default, cx.",
+      "options": [
+        {
+          "label": "CX Oracle",
+          "value": "cx"
+        },
+        {
+          "label": "oracleDB (No SQL Client)",
+          "value": "thin"
+        },
+        {
+          "label": "oracleDB (SQL Client)",
+          "value": "thick"
+        }
+      ]
+    },
+    {
+      "name": "password",
+      "kind": "string",
+      "label": "Password",
+      "description": "Your Oracle password.",
+      "sensitive": true
+    },
+    {
+      "name": "port",
+      "kind": "integer",
+      "label": "Port",
+      "description": "Your Oracle port."
+    },
+    {
+      "name": "scn_window_size",
+      "kind": "integer",
+      "label": "Scn Window Size",
+      "description": "The scan window size when using log based replication. Default, None."
+    },
+    {
+      "name": "service_name",
+      "label": "Service Name",
+      "description": "Your Oracle service name."
+    },
+    {
+      "name": "sid",
+      "label": "SID",
+      "description": "Your Oracle SID. If connecting directly to an instance, otherwise use service_name."
+    },
+    {
+      "name": "use_ora_rowscn",
+      "kind": "boolean",
+      "label": "Use Ora Rowscn",
+      "description": "A boolean whether to use ORA_ROWSCN to bookmark progress in case replication is interrupted. ORA_ROWSCN returns an Oracle SCN which is a System Change Number. This is a unique identifier for a particular change (i.e. a transaction). Default, True."
+    },
+    {
+      "name": "use_singer_decimal",
+      "kind": "boolean",
+      "label": "Use Singer Decimal",
+      "description": "This will help avoid numeric rounding issues emitting as a string with a format of singer.decimal."
+    },
+    {
+      "name": "user",
+      "label": "User",
+      "description": "Your Oracle user."
+    }
+  ]
+}

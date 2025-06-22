@@ -1,16 +1,12 @@
 version: 1
 default_environment: dev
 project_id: 70d9670f-9691-400e-aaf2-49a378faa6d2
+
 environments:
 - name: dev
-  config:
-    plugins:
-      extractors:
-      - name: tap-rest-api-msdk
-        select:
-        - '*.*'
 - name: staging
 - name: prod
+
 plugins:
   extractors:
   - name: tap-rest-api-msdk
@@ -39,6 +35,28 @@ plugins:
           per_page: 100
           embed: fields
 
+  - name: tap-oracle
+    variant: s7clarke10
+    pip_url: git+https://github.com/s7clarke10/pipelinewise-tap-oracle.git
+    config:
+      host: evs.easyweb.distrilog.net
+      port: 1521
+      service_name: DLOG
+      user: EVS_RO
+      password: ${ORACLE_PASSWORD}
+      filter_schemas: EVS
+      filter_tables: [EVS-CONTACT]
+      ora_python_driver_type: thin
+      default_replication_method: INCREMENTAL
+    select:
+    - EVS-CONTACT.IDCONTACT
+    - EVS-CONTACT.IDCOMPANY
+    - EVS-CONTACT.MODIFICATION_DATE
+    metadata:
+      EVS-CONTACT:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+
   loaders:
   - name: target-postgres
     variant: meltanolabs
@@ -50,3 +68,4 @@ plugins:
       password: ${POSTGRES_PASSWORD}
       database: ${POSTGRES_DATABASE}
       default_target_schema: ${POSTGRES_SCHEMA}
+      validate_records: false  # Add this line
