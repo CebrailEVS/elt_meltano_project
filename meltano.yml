@@ -18,12 +18,15 @@ plugins:
       bearer_token: ${YUMAN_BEARER_TOKEN}
       pagination_request_style: page_number_paginator
       pagination_response_style: default
-      pagination_page_size: 100
+      # Réduire la taille des pages pour moins de mémoire
+      pagination_page_size: 50  
       pagination_initial_offset: 1
       pagination_limit_per_page_param: per_page
       pagination_page_number_field: page
       next_page_token_path: $.page
       request_timeout: 300
+      # Optimisations pour la mémoire
+      request_records_limit: 1000  # Limite le nombre d'enregistrements par requête
       streams:
       - name: yuman_clients
         path: /v1/clients
@@ -32,8 +35,7 @@ plugins:
         schema: extract/schemas/yuman_clients.json
         replication_key: updated_at
         params:
-          per_page: 100
-          embed: fields
+          per_page: 50  # Cohérent avec pagination_page_size
 
   - name: tap-oracle
     variant: s7clarke10
@@ -45,15 +47,34 @@ plugins:
       user: EVS_RO
       password: ${ORACLE_PASSWORD}
       filter_schemas: EVS
-      filter_tables: [EVS-CONTACT]
+      filter_tables: [EVS-CONTACT, EVS-COMPANY,EVS-TASK_HAS_PRODUCT]  
       ora_python_driver_type: thin
       default_replication_method: INCREMENTAL
+      # Optimisations Oracle pour batch processing
+      batch_config:
+        encoding:
+          format: jsonl
+          compression: gzip
+        batch_size: 10000  # Traiter par batch de 10k enregistrements
+      # Configuration de streaming pour éviter de charger tout en mémoire
+      stream_buffer_size: 1000
+      # Timeout et connexion
+      query_timeout: 1800  # 30 minutes timeout
+      connection_pool_size: 5
     select:
     - EVS-CONTACT.IDCONTACT
     - EVS-CONTACT.IDCOMPANY
     - EVS-CONTACT.MODIFICATION_DATE
+    - EVS-COMPANY.*
+    - EVS-TASK_HAS_PRODUCT.*
     metadata:
       EVS-CONTACT:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+      EVS-COMPANY:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+      EVS-TASK_HAS_PRODUCT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
 
@@ -68,4 +89,17 @@ plugins:
       password: ${POSTGRES_PASSWORD}
       database: ${POSTGRES_DATABASE}
       default_target_schema: ${POSTGRES_SCHEMA}
-      validate_records: false  # Add this line
+      validate_records: false
+      # Optimisations PostgreSQL
+      batch_config:
+        encoding:
+          format: jsonl
+          compression: gzip
+        batch_size: 10000  # Même taille que l'extractor
+      # Configuration pour les gros volumes
+      max_batch_age: 300  
+      batch_size_rows: 5000  
+      flush_all_streams: true
+      # Optimisations de performance PostgreSQL
+      add_record_metadata: true  
+      hard_delete: true  
