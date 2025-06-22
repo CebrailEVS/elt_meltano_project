@@ -3,6 +3,12 @@ default_environment: dev
 project_id: 70d9670f-9691-400e-aaf2-49a378faa6d2
 environments:
 - name: dev
+  config:
+    plugins:
+      extractors:
+      - name: tap-rest-api-msdk
+        select:
+        - '*.*'
 - name: staging
 - name: prod
 plugins:
@@ -23,16 +29,15 @@ plugins:
       next_page_token_path: $.page
       request_timeout: 300
       streams:
-        - name: yuman_clients
-          path: /v1/clients
-          records_path: $.items[*]
-          primary_keys: [id]
-          schema: extract/schemas/yuman_clients.json
-          replication_key: updated_at
-          params:
-            per_page: 100
-            embed: "fields,category,sites,contacts"
-            
+      - name: yuman_clients
+        path: /v1/clients
+        records_path: $.items[*]
+        primary_keys: [id]
+        schema: extract/schemas/yuman_clients.json
+        replication_key: updated_at
+        params:
+          per_page: 100
+
   loaders:
   - name: target-postgres
     variant: meltanolabs
