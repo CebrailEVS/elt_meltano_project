@@ -37,6 +37,7 @@ plugins:
         replication_key: updated_at
         params:
           per_page: 100
+          embed: fields
 
   loaders:
   - name: target-postgres
