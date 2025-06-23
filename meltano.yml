@@ -113,6 +113,8 @@ plugins:
       # Optimisations de performance PostgreSQL
       add_record_metadata: true
       hard_delete: false
+
+  
   transformers:
   - name: dbt
     variant: dbt-labs
