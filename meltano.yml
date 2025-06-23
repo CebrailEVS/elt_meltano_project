@@ -117,3 +117,7 @@ plugins:
       hard_delete: false
 
 
+  utilities:
+  - name: dbt-postgres
+    variant: dbt-labs
+    pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.3.0
