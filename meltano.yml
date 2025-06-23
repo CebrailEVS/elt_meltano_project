@@ -25,8 +25,7 @@ plugins:
       pagination_page_number_field: page
       next_page_token_path: $.page
       request_timeout: 300
-      # Optimisations pour la mémoire
-      request_records_limit: 1000  # Limite le nombre d'enregistrements par requête
+      request_records_limit: 1000
       streams:
       - name: yuman_clients
         path: /v1/clients
@@ -35,7 +34,18 @@ plugins:
         schema: extract/schemas/yuman_clients.json
         replication_key: updated_at
         params:
-          per_page: 50  # Cohérent avec pagination_page_size
+          per_page: 50
+          embed: fields
+
+      - name: yuman_sites
+        path: /v1/sites
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        params:
+          per_page: 50
+          embed: fields
+
 
   - name: tap-oracle
     variant: s7clarke10
@@ -102,4 +112,4 @@ plugins:
       flush_all_streams: true
       # Optimisations de performance PostgreSQL
       add_record_metadata: true  
-      hard_delete: true  
+      hard_delete: false  
