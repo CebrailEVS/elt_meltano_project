@@ -1,4 +1,6 @@
+# staging/yuman_api/source.yml
 version: 2
+
 sources:
   - name: yuman_api
     schema: raw
@@ -9,3 +11,19 @@ sources:
             tests:
               - unique
               - not_null
+            description: "Identifiant unique du client"
+      
+      - name: yuman_sites
+        columns:
+          - name: id
+            tests:
+              - unique 
+              - not_null
+            description: "Identifiant unique du site"
+          - name: client_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('yuman_api', 'yuman_clients')
+                  field: id
+            description: "Référence vers le client propriétaire"

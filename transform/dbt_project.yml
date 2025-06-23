@@ -25,4 +25,8 @@ clean-targets:
 - dbt_packages
 - logs
 models:
-  my_meltano_project: null
+  my_meltano_project:
+    staging:
+      +schema: staging
+    marts:
+      +schema: marts
