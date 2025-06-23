@@ -121,3 +121,9 @@ plugins:
   - name: dbt-postgres
     variant: dbt-labs
     pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.3.0
+    config:
+      host: echo.evs-pro.fr
+      port: 31415
+      user: echo
+      dbname: echo
+      schema: analytics
