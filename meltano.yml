@@ -18,7 +18,6 @@ plugins:
       bearer_token: ${YUMAN_BEARER_TOKEN}
       pagination_request_style: page_number_paginator
       pagination_response_style: default
-      # Réduire la taille des pages pour moins de mémoire
       pagination_page_size: 50
       pagination_initial_offset: 1
       pagination_limit_per_page_param: per_page
@@ -26,6 +25,9 @@ plugins:
       next_page_token_path: $.page
       request_timeout: 300
       request_records_limit: 1000
+      backoff_type: header
+      backoff_time_extension: 15
+      backoff_param: Retry-After
       streams:
       - name: yuman_clients
         path: /v1/clients
