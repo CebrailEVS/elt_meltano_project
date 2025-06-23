@@ -19,7 +19,7 @@ plugins:
       pagination_request_style: page_number_paginator
       pagination_response_style: default
       # Réduire la taille des pages pour moins de mémoire
-      pagination_page_size: 50  
+      pagination_page_size: 50
       pagination_initial_offset: 1
       pagination_limit_per_page_param: per_page
       pagination_page_number_field: page
@@ -57,7 +57,7 @@ plugins:
       user: EVS_RO
       password: ${ORACLE_PASSWORD}
       filter_schemas: EVS
-      filter_tables: [EVS-CONTACT, EVS-COMPANY,EVS-TASK_HAS_PRODUCT]  
+      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT]
       ora_python_driver_type: thin
       default_replication_method: INCREMENTAL
       # Optimisations Oracle pour batch processing
@@ -107,9 +107,14 @@ plugins:
           compression: gzip
         batch_size: 10000  # Même taille que l'extractor
       # Configuration pour les gros volumes
-      max_batch_age: 300  
-      batch_size_rows: 5000  
+      max_batch_age: 300
+      batch_size_rows: 5000
       flush_all_streams: true
       # Optimisations de performance PostgreSQL
-      add_record_metadata: true  
-      hard_delete: false  
+      add_record_metadata: true
+      hard_delete: false
+  transformers:
+  - name: dbt
+    variant: dbt-labs
+    pip_url: dbt-core~=1.3.0 dbt-postgres~=1.3.0 dbt-redshift~=1.3.0 
+      dbt-snowflake~=1.3.0 dbt-bigquery~=1.3.0
