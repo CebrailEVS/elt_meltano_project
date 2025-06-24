@@ -67,17 +67,20 @@ plugins:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 10000  # Traiter par batch de 10k enregistrements
-      # Configuration de streaming pour éviter de charger tout en mémoire
+        batch_size: 10000  
       stream_buffer_size: 1000
-      # Timeout et connexion
-      query_timeout: 1800  # 30 minutes timeout
+      query_timeout: 1800  
       connection_pool_size: 5
     select:
+    # TABLE CONTACT
     - EVS-CONTACT.IDCONTACT
     - EVS-CONTACT.IDCOMPANY
     - EVS-CONTACT.MODIFICATION_DATE
+
+    # TABLE COMPANY
     - EVS-COMPANY.*
+
+    # TABLE TASK_HAS_PRODUCT
     - EVS-TASK_HAS_PRODUCT.*
     metadata:
       EVS-CONTACT:
@@ -102,17 +105,14 @@ plugins:
       database: ${POSTGRES_DATABASE}
       default_target_schema: ${POSTGRES_SCHEMA}
       validate_records: false
-      # Optimisations PostgreSQL
       batch_config:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 10000  # Même taille que l'extractor
-      # Configuration pour les gros volumes
+        batch_size: 10000  
       max_batch_age: 300
       batch_size_rows: 5000
       flush_all_streams: true
-      # Optimisations de performance PostgreSQL
       add_record_metadata: true
       hard_delete: false
 
