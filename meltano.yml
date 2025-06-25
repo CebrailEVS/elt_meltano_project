@@ -63,7 +63,7 @@ plugins:
         primary_keys: [id]
         replication_key: updated_at
         params:
-          per_page: 50      
+          per_page: 50
 
       - name: yuman_products
         path: /v1/products
