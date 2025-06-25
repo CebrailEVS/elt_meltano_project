@@ -76,7 +76,7 @@ plugins:
           embed: fields
 
       - name: yuman_workorder_demands 
-        path: /v1/workorder-demands
+        path: /v1/workorder_demands
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
