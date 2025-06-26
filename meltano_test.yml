@@ -153,8 +153,8 @@ plugins:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 50000
-      stream_buffer_size: 8000
+        batch_size: 10000
+      stream_buffer_size: 10000
       query_timeout: 1800
       connection_pool_size: 10
     select:
@@ -175,12 +175,15 @@ plugins:
       EVS-CONTACT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDCONTACT
       EVS-COMPANY:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDCOMPANY
       EVS-TASK_HAS_PRODUCT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDTASK_HAS_PRODUCT
       EVS-LABEL_HAS_TASK:
         replication-method: INCREMENTAL
         replication-key: IDTASK
@@ -201,9 +204,9 @@ plugins:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 50000
-      max_batch_age: 600
-      batch_size_rows: 30000
+        batch_size: 10000
+      max_batch_age: 300
+      batch_size_rows: 5000
       flush_all_streams: true
       add_record_metadata: true
       hard_delete: false
