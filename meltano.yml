@@ -145,7 +145,7 @@ plugins:
       user: EVS_RO
       password: ${ORACLE_PASSWORD}
       filter_schemas: EVS
-      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT]
+      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-LABEL_HAS_TASK]
       ora_python_driver_type: thin
       default_replication_method: INCREMENTAL
       # Optimisations Oracle pour batch processing
@@ -168,6 +168,9 @@ plugins:
 
     # TABLE TASK_HAS_PRODUCT
     - EVS-TASK_HAS_PRODUCT.*
+
+    # TABLE LABEL_HAS_TASK
+    - EVS-LABEL_HAS_TASK.*
     metadata:
       EVS-CONTACT:
         replication-method: INCREMENTAL
@@ -178,6 +181,9 @@ plugins:
       EVS-TASK_HAS_PRODUCT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+      EVS-LABEL_HAS_TASK:
+        replication-method: INCREMENTAL
+        replication-key: IDTASK
 
   loaders:
   - name: target-postgres
