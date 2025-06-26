@@ -1,12 +1,3 @@
-version: 1
-default_environment: dev
-project_id: 70d9670f-9691-400e-aaf2-49a378faa6d2
-
-environments:
-- name: dev
-- name: staging
-- name: prod
-
 plugins:
   extractors:
   - name: tap-rest-api-msdk
@@ -16,13 +7,6 @@ plugins:
       api_url: https://api.yuman.io
       auth_method: bearer_token
       bearer_token: ${YUMAN_BEARER_TOKEN}
-      pagination_request_style: page_number_paginator
-      pagination_response_style: default
-      pagination_page_size: 50
-      pagination_initial_offset: 1
-      pagination_limit_per_page_param: per_page
-      pagination_page_number_field: page
-      next_page_token_path: $.page
       request_timeout: 300
       request_records_limit: 1000
       backoff_type: header
@@ -35,6 +19,12 @@ plugins:
         primary_keys: [id]
         schema: extract/schemas/yuman_clients.json
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
@@ -44,6 +34,12 @@ plugins:
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
@@ -53,23 +49,34 @@ plugins:
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
-
+      
       - name: yuman_material_categories
         path: /v1/materials/categories
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
-        params:
-          per_page: 50
+        paginator: "single_page_paginator"
 
       - name: yuman_products
         path: /v1/products
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
@@ -79,6 +86,12 @@ plugins:
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
@@ -88,6 +101,12 @@ plugins:
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
           per_page: 50
           embed: fields
@@ -97,9 +116,15 @@ plugins:
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
         params:
-          per_page: 50     
-
+          per_page: 50 
+      
 
   - name: tap-oracle
     variant: s7clarke10
