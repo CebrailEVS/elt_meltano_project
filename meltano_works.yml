@@ -12,6 +12,13 @@ plugins:
   - name: tap-rest-api-msdk
     variant: widen
     pip_url: tap-rest-api-msdk
+    executable: tap-rest-api-msdk
+    namespace: tap_rest_api_msdk
+    
+  - name: tap-yuman-paginated
+    inherit_from: tap-rest-api-msdk
+    executable: tap-rest-api-msdk
+    namespace: tap_rest_api_msdk
     config:
       api_url: https://api.yuman.io
       auth_method: bearer_token
@@ -20,120 +27,38 @@ plugins:
       request_records_limit: 1000
       backoff_type: header
       backoff_time_extension: 15
-      backoff_param: Retry-After
+      pagination_request_style: page_number_paginator
+      pagination_response_style: default
+      pagination_page_size: 50
+      pagination_initial_offset: 1
+      pagination_limit_per_page_param: per_page
+      pagination_page_number_field: page
+      next_page_token_path: $.page
       streams:
-      - name: yuman_clients
-        path: /v1/clients
-        records_path: $.items[*]
-        primary_keys: [id]
-        schema: extract/schemas/yuman_clients.json
-        replication_key: updated_at
-        paginator: "page_number_paginator"
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
+        - name: yuman_clients
+          path: /v1/clients
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
 
-      - name: yuman_sites
-        path: /v1/sites
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
-
-      - name: yuman_materials
-        path: /v1/materials
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
-
+  - name: tap-yuman-default
+    inherit_from: tap-rest-api-msdk
+    executable: tap-rest-api-msdk
+    namespace: tap_rest_api_msdk
+    config:
+      api_url: https://api.yuman.io
+      auth_method: bearer_token
+      bearer_token: ${YUMAN_BEARER_TOKEN}
+      pagination_request_style: jsonpath_paginator
+      streams:
       - name: yuman_material_categories
         path: /v1/materials/categories
         records_path: $.items[*]
         primary_keys: [id]
         replication_key: updated_at
         paginator: single_page_paginator
-
-      - name: yuman_products
-        path: /v1/products
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
-
-      - name: yuman_workorders
-        path: /v1/workorders
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
-
-      - name: yuman_workorder_demands
-        path: /v1/workorder_demands
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-          embed: fields
-
-      - name: yuman_users
-        path: /v1/users
-        records_path: $.items[*]
-        primary_keys: [id]
-        replication_key: updated_at
-        paginator: page_number_paginator
-        pagination_page_size: 50
-        pagination_initial_offset: 1
-        pagination_limit_per_page_param: per_page
-        pagination_page_number_field: page
-        next_page_token_path: $.page
-        params:
-          per_page: 50
-
 
   - name: tap-oracle
     variant: s7clarke10
