@@ -145,7 +145,7 @@ plugins:
       user: EVS_RO
       password: ${ORACLE_PASSWORD}
       filter_schemas: EVS
-      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-LABEL_HAS_TASK]
+      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-TASK_HAS_RESOURCES,EVS-LABEL_HAS_TASK]
       ora_python_driver_type: thin
       default_replication_method: INCREMENTAL
       # Optimisations Oracle pour batch processing
@@ -169,18 +169,28 @@ plugins:
     # TABLE TASK_HAS_PRODUCT
     - EVS-TASK_HAS_PRODUCT.*
 
+    # TABLE TASK_HAS_RESOURCES
+    - EVS-TASK_HAS_RESOURCES.IDTASK
+    - EVS-TASK_HAS_RESOURCES.IDRESOURCES
+
     # TABLE LABEL_HAS_TASK
     - EVS-LABEL_HAS_TASK.*
     metadata:
       EVS-CONTACT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDCONTACT
       EVS-COMPANY:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDCOMPANY
       EVS-TASK_HAS_PRODUCT:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
+        key-properties: IDTASK_HAS_PRODUCT
+      EVS-TASK_HAS_RESOURCES:
+        replication-method: INCREMENTAL
+        replication-key: IDTASK
       EVS-LABEL_HAS_TASK:
         replication-method: INCREMENTAL
         replication-key: IDTASK

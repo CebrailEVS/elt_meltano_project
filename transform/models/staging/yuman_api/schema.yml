@@ -42,3 +42,10 @@ models:
           - relationships:
               to: ref('stg_yuman_api__sites')
               field: site_id
+      - name: category_id
+        description: "Référence vers la catégorie du matériau"
+        tests:
+          - not_null
+          - relationships:
+              to: ref('stg_yuman_api__materials_categories')
+              field: category_id
