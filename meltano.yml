@@ -16,6 +16,10 @@ environments:
           password: ${POSTGRES_PASSWORD_DEV}
           database: ${POSTGRES_DATABASE_DEV}
           default_target_schema: ${POSTGRES_SCHEMA_DEV}
+      utilities:
+        - name: dbt-postgres
+          config:
+            dbname: echo_dev
 
 - name: prod
   state_id_suffix: prod
@@ -30,6 +34,10 @@ environments:
           password: ${POSTGRES_PASSWORD_PROD}
           database: ${POSTGRES_DATABASE_PROD}
           default_target_schema: ${POSTGRES_SCHEMA_PROD}
+      utilities:
+        - name: dbt-postgres
+          config:
+            dbname: echo
 
 plugins:
   extractors:
@@ -66,59 +74,9 @@ plugins:
           replication_key: updated_at
           params:
             per_page: 50
-
-        - name: yuman_sites
-          path: /v1/sites
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
             embed: fields
 
-        - name: yuman_materials
-          path: /v1/materials
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
-            embed: fields
 
-        - name: yuman_products
-          path: /v1/products
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
-            embed: fields
-
-        - name: yuman_workorders
-          path: /v1/workorders
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
-            embed: fields
-
-        - name: yuman_workorder_demands
-          path: /v1/workorder_demands
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
-            embed: fields
-
-        - name: yuman_users
-          path: /v1/users
-          records_path: $.items[*]
-          primary_keys: [id]
-          replication_key: updated_at
-          params:
-            per_page: 50
 
   - name: tap-yuman-default
     inherit_from: tap-rest-api-msdk
@@ -220,8 +178,9 @@ plugins:
     variant: dbt-labs
     pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.3.0
     config:
-      host: echo.evs-pro.fr
-      port: 31415
-      user: echo
-      dbname: echo
-      schema: analytics
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${DBT_POSTGRES_PASSWORD}
+      dbname: ${POSTGRES_DATABASE}  # Valeur par défaut, surchargée par environnement
+      schema: analytics  # Valeur par défaut, surchargée par environnement
