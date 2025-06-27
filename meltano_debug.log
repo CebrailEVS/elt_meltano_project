@@ -1,0 +1,1351 @@
+[2m2025-06-27T09:54:23.891115Z[0m [[32m[1mdebug    [0m] [1mMeltano 3.7.8, Python 3.11.4, Linux (x86_64)[0m
+[2m2025-06-27T09:54:23.893467Z[0m [[32m[1mdebug    [0m] [1m/etc/timezone found, contents:
+ Europe/Paris
+[0m
+[2m2025-06-27T09:54:23.893869Z[0m [[32m[1mdebug    [0m] [1m/etc/localtime found          [0m
+[2m2025-06-27T09:54:23.894695Z[0m [[32m[1mdebug    [0m] [1m2 found:
+ {'/etc/timezone': 'Europe/Paris', '/etc/localtime is a symlink to': 'Europe/Paris'}[0m
+[2m2025-06-27T09:54:23.898679Z[0m [[32m[1minfo     [0m] [1mEnvironment 'dev' is active   [0m
+[2m2025-06-27T09:54:23.919491Z[0m [[32m[1mdebug    [0m] [1mCreating DB engine for project at '/mnt/data/elt/elt_meltano_project' with DB URI 'postgresql://echo#qj7zp8Ej%#^JeHjgLu^y&ETc%BVvwUgx3c2ETkWD5CVr2nhS8@echo.evs-pro.fr:31415/meltano_system'[0m
+[2m2025-06-27T09:54:24.059796Z[0m [[32m[1mdebug    [0m] [1mFound plugin parent           [0m [36mparent[0m=[35mtap-rest-api-msdk[0m [36mplugin[0m=[35mtap-rest-api-msdk[0m [36msource[0m=[35mLOCKFILE[0m
+[2m2025-06-27T09:54:24.060985Z[0m [[32m[1mdebug    [0m] [1mfound plugin in cli invocation[0m [36mplugin_name[0m=[35mtap-rest-api-msdk[0m
+[2m2025-06-27T09:54:24.064400Z[0m [[32m[1mdebug    [0m] [1mFound plugin parent           [0m [36mparent[0m=[35mtarget-postgres[0m [36mplugin[0m=[35mtarget-postgres[0m [36msource[0m=[35mLOCKFILE[0m
+[2m2025-06-27T09:54:24.065346Z[0m [[32m[1mdebug    [0m] [1mfound plugin in cli invocation[0m [36mplugin_name[0m=[35mtarget-postgres[0m
+[2m2025-06-27T09:54:24.065738Z[0m [[32m[1mdebug    [0m] [1mhead of set is extractor as expected[0m [36mblock[0m=[35mtap-rest-api-msdk[0m
+[2m2025-06-27T09:54:24.316588Z[0m [[32m[1mdebug    [0m] [1mfound block                   [0m [36mblock_type[0m=[35mloaders[0m [36mindex[0m=[35m1[0m
+[2m2025-06-27T09:54:24.316985Z[0m [[32m[1mdebug    [0m] [1mblocks                        [0m [36midx[0m=[35m1[0m [36moffset[0m=[35m0[0m
+[2m2025-06-27T09:54:24.400736Z[0m [[32m[1mdebug    [0m] [1mVariable '$TARGET_POSTGRES_SCHEMA' is not set in the provided env dictionary.[0m
+[2m2025-06-27T09:54:24.402782Z[0m [[32m[1mdebug    [0m] [1mfound ExtractLoadBlocks set   [0m [36moffset[0m=[35m0[0m
+[2m2025-06-27T09:54:24.402985Z[0m [[32m[1mdebug    [0m] [1mvalidating ExtractLoadBlock.  [0m [36mset_number[0m=[35m0[0m
+[2m2025-06-27T09:54:24.403115Z[0m [[32m[1mdebug    [0m] [1mAll ExtractLoadBlocks validated, starting execution.[0m
+[2m2025-06-27T09:54:24.418925Z[0m [[32m[1mdebug    [0m] [1mSkipped installing extractor 'tap-rest-api-msdk'[0m
+[2m2025-06-27T09:54:24.434231Z[0m [[32m[1mdebug    [0m] [1mSkipped installing loader 'target-postgres'[0m
+[2m2025-06-27T09:54:24.434538Z[0m [[32m[1mdebug    [0m] [1mInstalled 0/2 plugins         [0m
+[2m2025-06-27T09:54:24.434648Z[0m [[32m[1mdebug    [0m] [1mSkipped installing 2/2 plugins[0m
+[2m2025-06-27T09:54:25.028930Z[0m [[32m[1mdebug    [0m] [1mCreated configuration at /mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json[0m
+[2m2025-06-27T09:54:25.029758Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.properties.json in /mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/tap.properties.json, skipping.[0m
+[2m2025-06-27T09:54:25.030290Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.properties.cache_key in /mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/tap.properties.cache_key, skipping.[0m
+[2m2025-06-27T09:54:25.030641Z[0m [[32m[1mdebug    [0m] [1mCould not find state.json in /mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/state.json, skipping.[0m
+[2m2025-06-27T09:54:25.030985Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.singer_sdk_logging.json in /mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/tap.singer_sdk_logging.json, skipping.[0m
+[2m2025-06-27T09:54:25.031321Z[0m [[32m[1mdebug    [0m] [1mCould not find tap.pipelinewise_logging.conf in /mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/tap.pipelinewise_logging.conf, skipping.[0m
+[2m2025-06-27T09:54:25.046424Z[0m [[32m[1minfo     [0m] [1mUsing systemdb state backend  [0m
+[2m2025-06-27T09:54:25.048731Z[0m [[33m[1mwarning  [0m] [1mNo state was found, complete import.[0m
+[2m2025-06-27T09:54:25.051004Z[0m [[32m[1mdebug    [0m] [1mInvoking: ['/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk', '--config', '/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json', '--discover'][0m
+Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk", line 8, in <module>
+    sys.exit(TapRestApiMsdk.cli())
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1362, in main
+    with self.make_context(prog_name, args, **extra) as ctx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2355, in process_value
+    value = self.callback(ctx, self, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 539, in cb_discover
+    tap.run_discovery()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 294, in run_discovery
+    catalog_text = self.catalog_json_text
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 314, in catalog_json_text
+    return dump_json(self.catalog_dict, indent=2)
+                     ^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 305, in catalog_dict
+    return t.cast(dict, self._singer_catalog.to_dict())
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 325, in _singer_catalog
+    for stream in self.streams.values()
+                  ^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 134, in streams
+    for stream in self.load_streams():
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 358, in load_streams
+    for stream in self.discover_streams():
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 494, in discover_streams
+    schema = self.get_schema(
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 608, in get_schema
+    r = requests.get(
+        ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+[2m2025-06-27T09:56:36.945095Z[0m [[32m[1mdebug    [0m] [1mDeleted configuration at /mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json[0m
+[2m2025-06-27T09:56:36.959351Z[0m [[31m[1merror    [0m] [1mCannot start plugin tap-rest-api-msdk: Catalog discovery failed: command ['/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk', '--config', '/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json', '--discover'] returned 1 with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk", line 8, in <module>
+    sys.exit(TapRestApiMsdk.cli())
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1362, in main
+    with self.make_context(prog_name, args, **extra) as ctx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2355, in process_value
+    value = self.callback(ctx, self, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 539, in cb_discover
+    tap.run_discovery()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 294, in run_discovery
+    catalog_text = self.catalog_json_text
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 314, in catalog_json_text
+    return dump_json(self.catalog_dict, indent=2)
+                     ^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 305, in catalog_dict
+    return t.cast(dict, self._singer_catalog.to_dict())
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 325, in _singer_catalog
+    for stream in self.streams.values()
+                  ^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 134, in streams
+    for stream in self.load_streams():
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 358, in load_streams
+    for stream in self.discover_streams():
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 494, in discover_streams
+    schema = self.get_schema(
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 608, in get_schema
+    r = requests.get(
+        ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+[0m
+[2m2025-06-27T09:56:36.959932Z[0m [[31m[1merror    [0m] [1mBlock run completed.          [0m [36mblock_type[0m=[35mExtractLoadBlocks[0m [36merr[0m=[35mRunnerError('Cannot start plugin tap-rest-api-msdk: Catalog discovery failed: command [\'/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk\', \'--config\', \'/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json\', \'--discover\'] returned 1 with stderr:\n Found path to a schema, not doing discovery.\nNo schema found. Inferring schema from API call.\nTraceback (most recent call last):\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn\n    conn = connection.create_connection(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection\n    raise err\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection\n    sock.connect(sa)\nTimeoutError: [Errno 110] Connection timed out\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 716, in urlopen\n    httplib_response = self._make_request(\n                       ^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 404, in _make_request\n    self._validate_conn(conn)\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn\n    conn.connect()\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect\n    self.sock = conn = self._new_conn()\n                       ^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 179, in _new_conn\n    raise ConnectTimeoutError(\nurllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, \'Connection to api-dev.yuman.io timed out. (connect timeout=None)\')\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 667, in send\n    resp = conn.urlopen(\n           ^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 802, in urlopen\n    retries = retries.increment(\n              ^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment\n    raise MaxRetryError(_pool, url, error or ResponseError(cause))\nurllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host=\'api-dev.yuman.io\', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, \'Connection to api-dev.yuman.io timed out. (connect timeout=None)\'))\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk", line 8, in <module>\n    sys.exit(TapRestApiMsdk.cli())\n             ^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1442, in __call__\n    return self.main(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1362, in main\n    with self.make_context(prog_name, args, **extra) as ctx:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1186, in make_context\n    self.parse_args(ctx, args)\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1197, in parse_args\n    value, args = param.handle_parse_result(ctx, opts, args)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2416, in handle_parse_result\n    value = self.process_value(ctx, value)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2355, in process_value\n    value = self.callback(ctx, self, value)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 539, in cb_discover\n    tap.run_discovery()\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 294, in run_discovery\n    catalog_text = self.catalog_json_text\n                   ^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 314, in catalog_json_text\n    return dump_json(self.catalog_dict, indent=2)\n                     ^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 305, in catalog_dict\n    return t.cast(dict, self._singer_catalog.to_dict())\n                        ^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 325, in _singer_catalog\n    for stream in self.streams.values()\n                  ^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 134, in streams\n    for stream in self.load_streams():\n                  ^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 358, in load_streams\n    for stream in self.discover_streams():\n                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 494, in discover_streams\n    schema = self.get_schema(\n             ^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 608, in get_schema\n    r = requests.get(\n        ^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get\n    return request("get", url, params=params, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request\n    return session.request(method=method, url=url, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request\n    resp = self.send(prep, **send_kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send\n    r = adapter.send(request, **kwargs)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 688, in send\n    raise ConnectTimeout(e, request=request)\nrequests.exceptions.ConnectTimeout: HTTPSConnectionPool(host=\'api-dev.yuman.io\', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, \'Connection to api-dev.yuman.io timed out. (connect timeout=None)\'))\n')[0m [36mexit_codes[0m=[35m{}[0m [36mset_number[0m=[35m0[0m [36msuccess[0m=[35mFalse[0m
+[2m2025-06-27T09:56:36.964479Z[0m [[32m[1mdebug    [0m] [1mNeed help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+Run invocation could not be completed as block failed: Cannot start plugin tap-rest-api-msdk: Catalog discovery failed: command ['/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk', '--config', '/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json', '--discover'] returned 1 with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk", line 8, in <module>
+    sys.exit(TapRestApiMsdk.cli())
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1362, in main
+    with self.make_context(prog_name, args, **extra) as ctx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2355, in process_value
+    value = self.callback(ctx, self, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 539, in cb_discover
+    tap.run_discovery()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 294, in run_discovery
+    catalog_text = self.catalog_json_text
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 314, in catalog_json_text
+    return dump_json(self.catalog_dict, indent=2)
+                     ^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 305, in catalog_dict
+    return t.cast(dict, self._singer_catalog.to_dict())
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 325, in _singer_catalog
+    for stream in self.streams.values()
+                  ^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 134, in streams
+    for stream in self.load_streams():
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 358, in load_streams
+    for stream in self.discover_streams():
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 494, in discover_streams
+    schema = self.get_schema(
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 608, in get_schema
+    r = requests.get(
+        ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+[0m
+[31m╭─[0m[31m──────────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m───────────────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1msinger.py[0m [31m│[0m
+[31m│[0m :329 in start                                                                                    [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m326 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m327 [0m[2m│   │   [0mstdin = asyncio.subprocess.PIPE [94mif[0m [96mself[0m.consumer [94melse[0m [94mNone[0m                         [31m│[0m
+[31m│[0m   [2m328 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m329 [2m│   │   │   [0m[96mself[0m._process_handle = [94mawait[0m [96mself[0m.invoker.invoke_async(                        [31m│[0m
+[31m│[0m   [2m330 [0m[2m│   │   │   │   [0mlimit=line_length_limit,                                                   [31m│[0m
+[31m│[0m   [2m331 [0m[2m│   │   │   │   [0mstdin=stdin,  [2m# Singer messages[0m                                            [31m│[0m
+[31m│[0m   [2m332 [0m[2m│   │   │   │   [0mstdout=asyncio.subprocess.PIPE,  [2m# Singer state[0m                            [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/[0m[1mplugin_invoker.[0m [31m│[0m
+[31m│[0m [1mpy[0m:508 in invoke_async                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m505 [0m[2;33m│   │   [0m[33mReturns:[0m                                                                           [31m│[0m
+[31m│[0m   [2m506 [0m[2;33m│   │   │   [0m[33mSubprocess.[0m                                                                    [31m│[0m
+[31m│[0m   [2m507 [0m[2;33m│   │   [0m[33m"""[0m                                                                                [31m│[0m
+[31m│[0m [31m❱ [0m508 [2m│   │   [0m[1;4;94masync[0m[1;4m [0m[1;4;94mwith[0m[1;4m [0m[1;4;96mself[0m[1;4m._invoke(*args, **kwargs) [0m[1;4;94mas[0m[1;4m ([0m                                      [31m│[0m
+[31m│[0m   [2m509 [0m[2m│   │   │   [0m[1;4mpopen_args,[0m                                                                    [31m│[0m
+[31m│[0m   [2m510 [0m[2m│   │   │   [0m[1;4mpopen_options,[0m                                                                 [31m│[0m
+[31m│[0m   [2m511 [0m[2m│   │   │   [0m[1;4mpopen_env,[0m                                                                     [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/[0m[1mcontextlib.py[0m:204 in __aenter__                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m201 [0m[2m│   │   [0m[2m# they are only needed for recreation, which is not possible anymore[0m               [31m│[0m
+[31m│[0m   [2m202 [0m[2m│   │   [0m[94mdel[0m [96mself[0m.args, [96mself[0m.kwds, [96mself[0m.func                                                [31m│[0m
+[31m│[0m   [2m203 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m204 [2m│   │   │   [0m[94mreturn[0m [94mawait[0m anext([96mself[0m.gen)                                                   [31m│[0m
+[31m│[0m   [2m205 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopAsyncIteration[0m[1;4m:[0m                                                         [31m│[0m
+[31m│[0m   [2m206 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m"[0m[1;4;33mgenerator didn[0m[1;4;33m'[0m[1;4;33mt yield[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;94mNone[0m                         [31m│[0m
+[31m│[0m   [2m207 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/[0m[1mplugin_invoker.[0m [31m│[0m
+[31m│[0m [1mpy[0m:480 in _invoke                                                                                [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m477 [0m[2m│   │   [0m[94mif[0m require_preparation [95mand[0m [95mnot[0m [96mself[0m._prepared:                                     [31m│[0m
+[31m│[0m   [2m478 [0m[2m│   │   │   [0m[94mraise[0m InvokerNotPreparedError                                                  [31m│[0m
+[31m│[0m   [2m479 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m [31m❱ [0m480 [2m│   │   [0m[1;4;94masync[0m[1;4m [0m[1;4;94mwith[0m[1;4m [0m[1;4;96mself[0m[1;4m.plugin.trigger_hooks([0m[1;4;33m"[0m[1;4;33minvoke[0m[1;4;33m"[0m[1;4m, [0m[1;4;96mself[0m[1;4m, args):[0m                        [31m│[0m
+[31m│[0m   [2m481 [0m[2m│   │   │   [0m[1;4mpopen_options = {**[0m[1;4;96mself[0m[1;4m.Popen_options(), **kwargs}[0m                             [31m│[0m
+[31m│[0m   [2m482 [0m[2m│   │   │   [0m[1;4mpopen_env = {**[0m[1;4;96mself[0m[1;4m.env(), **env}[0m                                              [31m│[0m
+[31m│[0m   [2m483 [0m[2m│   │   │   [0m[1;4mpopen_args = [0m[1;4;96mself[0m[1;4m.exec_args(*args, command=command, env=popen_env)[0m             [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/[0m[1mcontextlib.py[0m:204 in __aenter__                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m201 [0m[2m│   │   [0m[2m# they are only needed for recreation, which is not possible anymore[0m               [31m│[0m
+[31m│[0m   [2m202 [0m[2m│   │   [0m[94mdel[0m [96mself[0m.args, [96mself[0m.kwds, [96mself[0m.func                                                [31m│[0m
+[31m│[0m   [2m203 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m204 [2m│   │   │   [0m[94mreturn[0m [94mawait[0m anext([96mself[0m.gen)                                                   [31m│[0m
+[31m│[0m   [2m205 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopAsyncIteration[0m[1;4m:[0m                                                         [31m│[0m
+[31m│[0m   [2m206 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m"[0m[1;4;33mgenerator didn[0m[1;4;33m'[0m[1;4;33mt yield[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;94mNone[0m                         [31m│[0m
+[31m│[0m   [2m207 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/behavior/[0m[1mhookab[0m [31m│[0m
+[31m│[0m [1mle.py[0m:93 in trigger_hooks                                                                        [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 90 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m 91 [0m[2m│   │   [0m[94mif[0m [95mnot[0m already_triggering:                                                         [31m│[0m
+[31m│[0m   [2m 92 [0m[2m│   │   │   [0m[96mself[0m._triggering_hooks.add(hook_name)                                          [31m│[0m
+[31m│[0m [31m❱ [0m 93 [2m│   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.[0m[1;4;91m__class__[0m[1;4m.trigger([0m[1;4;96mself[0m[1;4m, [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mbefore_[0m[1;4;33m{[0m[1;4mhook_name[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m, *args, **kwargs)[0m     [31m│[0m
+[31m│[0m   [2m 94 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m 95 [0m[2m│   │   [0m[94myield[0m                                                                              [31m│[0m
+[31m│[0m   [2m 96 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/behavior/[0m[1mhookab[0m [31m│[0m
+[31m│[0m [1mle.py[0m:121 in trigger                                                                             [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m118 [0m[2m│   │   │   │   │   │   [0m[33mf[0m[33m"[0m[33m{[0mhook_name[33m}[0m[33m hook [0m[33m'[0m[33m{[0mhook_func.[91m__name__[0m[33m}[0m[33m'[0m[33m has failed: [0m[33m{[0merr[33m}[0m[33m"[0m,  [2m#[0m   [31m│[0m
+[31m│[0m   [2m119 [0m[2m│   │   │   │   │   [0m)                                                                      [31m│[0m
+[31m│[0m   [2m120 [0m[2m│   │   │   │   [0m[94melse[0m:                                                                      [31m│[0m
+[31m│[0m [31m❱ [0m121 [2m│   │   │   │   │   [0m[1;4;94mraise[0m[1;4m err[0m                                                              [31m│[0m
+[31m│[0m   [2m122 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/behavior/[0m[1mhookab[0m [31m│[0m
+[31m│[0m [1mle.py[0m:113 in trigger                                                                             [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m110 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m111 [0m[2m│   │   [0m[94mfor[0m hook_func [95min[0m hooks:                                                            [31m│[0m
+[31m│[0m   [2m112 [0m[2m│   │   │   [0m[94mtry[0m:                                                                           [31m│[0m
+[31m│[0m [31m❱ [0m113 [2m│   │   │   │   [0m[94mawait[0m hook_func(target, *args, **kwargs)                                   [31m│[0m
+[31m│[0m   [2m114 [0m[2m│   │   │   [0m[94mexcept[0m [96mException[0m [94mas[0m err:  [2m# noqa: PERF203[0m                                      [31m│[0m
+[31m│[0m   [2m115 [0m[2m│   │   │   │   [0m[94mif[0m hook_func.__hook__.can_fail:                                            [31m│[0m
+[31m│[0m   [2m116 [0m[2m│   │   │   │   │   [0mlogger.debug([96mstr[0m(err), exc_info=[94mTrue[0m)                                  [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/plugin/singer/[0m[1mt[0m [31m│[0m
+[31m│[0m [1map.py[0m:370 in discover_catalog_hook                                                               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m367 [0m[2m│   │   │   [0m[94mreturn[0m                                                                         [31m│[0m
+[31m│[0m   [2m368 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m369 [0m[2m│   │   [0m[94mwith[0m suppress(PluginLacksCapabilityError):                                         [31m│[0m
+[31m│[0m [31m❱ [0m370 [2m│   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.discover_catalog(plugin_invoker)[0m                                    [31m│[0m
+[31m│[0m   [2m371 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m372 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92m_get_catalog[0m([96mself[0m, plugin_invoker: PluginInvoker) -> Path:                   [31m│[0m
+[31m│[0m   [2m373 [0m[2;90m│   │   [0m[33m"""Get the user-provided or discovered catalog file.[0m                               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/plugin/singer/[0m[1mt[0m [31m│[0m
+[31m│[0m [1map.py[0m:430 in discover_catalog                                                                    [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m427 [0m[2;33m│   │   [0m[33mReturns:[0m                                                                           [31m│[0m
+[31m│[0m   [2m428 [0m[2;33m│   │   │   [0m[33mNone[0m                                                                           [31m│[0m
+[31m│[0m   [2m429 [0m[2;33m│   │   [0m[33m"""[0m                                                                                [31m│[0m
+[31m│[0m [31m❱ [0m430 [2m│   │   [0mcatalog_path = [1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._get_catalog(plugin_invoker)[0m                             [31m│[0m
+[31m│[0m   [2m431 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m432 [0m[2m│   │   [0m[2m# test for the result to be a valid catalog[0m                                        [31m│[0m
+[31m│[0m   [2m433 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/plugin/singer/[0m[1mt[0m [31m│[0m
+[31m│[0m [1map.py[0m:418 in _get_catalog                                                                        [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m415 [0m[2m│   │   [0m[94mwith[0m suppress([96mFileNotFoundError[0m):                                                  [31m│[0m
+[31m│[0m   [2m416 [0m[2m│   │   │   [0mcatalog_cache_key_path.unlink()                                                [31m│[0m
+[31m│[0m   [2m417 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m [31m❱ [0m418 [2m│   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.run_discovery(plugin_invoker, catalog_path)[0m                             [31m│[0m
+[31m│[0m   [2m419 [0m[2m│   │   [0m[94mreturn[0m catalog_path                                                                [31m│[0m
+[31m│[0m   [2m420 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m421 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92mdiscover_catalog[0m([96mself[0m, plugin_invoker: PluginInvoker) -> [94mNone[0m:               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/plugin/singer/[0m[1mt[0m [31m│[0m
+[31m│[0m [1map.py[0m:520 in run_discovery                                                                       [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m517 [0m[2m│   │   │   [0m[94mif[0m exit_code != [94m0[0m:                                                             [31m│[0m
+[31m│[0m   [2m518 [0m[2m│   │   │   │   [0mcatalog_path.unlink()                                                      [31m│[0m
+[31m│[0m   [2m519 [0m[2m│   │   │   │   [0mstderr_buff.seek([94m0[0m)                                                        [31m│[0m
+[31m│[0m [31m❱ [0m520 [2m│   │   │   │   [0m[1;4;94mraise[0m[1;4m PluginExecutionError([0m                                                [31m│[0m
+[31m│[0m   [2m521 [0m[2m│   │   │   │   │   [0m[1;4;33m"[0m[1;4;33mCatalog discovery failed: command [0m[1;4;33m"[0m[1;4m  [0m[1;2;4m# noqa: EM102[0m                    [31m│[0m
+[31m│[0m   [2m522 [0m[2m│   │   │   │   │   [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33m{[0m[1;4mplugin_invoker.exec_args([0m[1;4;33m'[0m[1;4;33m--discover[0m[1;4;33m'[0m[1;4m)[0m[1;4;33m}[0m[1;4;33m returned [0m[1;4;33m"[0m                  [31m│[0m
+[31m│[0m   [2m523 [0m[2m│   │   │   │   │   [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33m{[0m[1;4mexit_code[0m[1;4;33m}[0m[1;4;33m with stderr:[0m[1;4;33m\n[0m[1;4;33m [0m[1;4;33m{[0m[1;4mstderr_buff.read()[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m,[0m                    [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mPluginExecutionError: [0mCatalog discovery failed: command [1m[[0m[32m'/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk'[0m, [32m'--config'[0m, 
+[32m'/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json'[0m, [32m'--discover'[0m[1m][0m returned [1;36m1[0m with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m174[0m, in _new_conn
+    conn = [1;35mconnection.create_connection[0m[1m([0m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m95[0m, in create_connection
+    raise err
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m85[0m, in create_connection
+    [1;35msock.connect[0m[1m([0msa[1m)[0m
+TimeoutError: [1m[[0mErrno [1;36m110[0m[1m][0m Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m716[0m, in urlopen
+    httplib_response = [1;35mself._make_request[0m[1m([0m
+                       ^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m404[0m, in _make_request
+    [1;35mself._validate_conn[0m[1m([0mconn[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m1061[0m, in _validate_conn
+    [1;35mconn.connect[0m[1m([0m[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m363[0m, in connect
+    self.sock = conn = [1;35mself._new_conn[0m[1m([0m[1m)[0m
+                       ^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m179[0m, in _new_conn
+    raise [1;35mConnectTimeoutError[0m[1m([0m
+urllib3.exceptions.ConnectTimeoutError: [1m([0m[1m<[0m[1;95murllib3.connection.HTTPSConnection[0m[39m object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m667[0m[39m, in send[0m
+[39m    resp = [0m[1;35mconn.urlopen[0m[1;39m([0m
+[39m           ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m[39m, line [0m[1;36m802[0m[39m, in urlopen[0m
+[39m    retries = [0m[1;35mretries.increment[0m[1;39m([0m
+[39m              ^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py"[0m[39m, line [0m[1;36m594[0m[39m, in increment[0m
+[39m    raise [0m[1;35mMaxRetryError[0m[1;39m([0m[39m_pool, url, error or [0m[1;35mResponseError[0m[1;39m([0m[39mcause[0m[1;39m)[0m[1;39m)[0m
+[39murllib3.exceptions.MaxRetryError: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk"[0m[39m, line [0m[1;36m8[0m[39m, in <module>[0m
+[39m    [0m[1;35msys.exit[0m[1;39m([0m[1;35mTapRestApiMsdk.cli[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m             ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1442[0m[39m, in __call__[0m
+[39m    return [0m[1;35mself.main[0m[1;39m([0m[39m*args, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1362[0m[39m, in main[0m
+[39m    with [0m[1;35mself.make_context[0m[1;39m([0m[39mprog_name, args, **extra[0m[1;39m)[0m[39m as ctx:[0m
+[39m         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1186[0m[39m, in make_context[0m
+[39m    [0m[1;35mself.parse_args[0m[1;39m([0m[39mctx, args[0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1197[0m[39m, in parse_args[0m
+[39m    value, args = [0m[1;35mparam.handle_parse_result[0m[1;39m([0m[39mctx, opts, args[0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2416[0m[39m, in handle_parse_result[0m
+[39m    value = [0m[1;35mself.process_value[0m[1;39m([0m[39mctx, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2355[0m[39m, in process_value[0m
+[39m    value = [0m[1;35mself.callback[0m[1;39m([0m[39mctx, self, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m539[0m[39m, in cb_discover[0m
+[39m    [0m[1;35mtap.run_discovery[0m[1;39m([0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m294[0m[39m, in run_discovery[0m
+[39m    catalog_text = self.catalog_json_text[0m
+[39m                   ^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m314[0m[39m, in catalog_json_text[0m
+[39m    return [0m[1;35mdump_json[0m[1;39m([0m[39mself.catalog_dict, [0m[33mindent[0m[39m=[0m[1;36m2[0m[1;39m)[0m
+[39m                     ^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m305[0m[39m, in catalog_dict[0m
+[39m    return [0m[1;35mt.cast[0m[1;39m([0m[39mdict, [0m[1;35mself._singer_catalog.to_dict[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m                        ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m325[0m[39m, in _singer_catalog[0m
+[39m    for stream in [0m[1;35mself.streams.values[0m[1;39m([0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m134[0m[39m, in streams[0m
+[39m    for stream in [0m[1;35mself.load_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m358[0m[39m, in load_streams[0m
+[39m    for stream in [0m[1;35mself.discover_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m494[0m[39m, in discover_streams[0m
+[39m    schema = [0m[1;35mself.get_schema[0m[1;39m([0m
+[39m             ^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m608[0m[39m, in get_schema[0m
+[39m    r = [0m[1;35mrequests.get[0m[1;39m([0m
+[39m        ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m73[0m[39m, in get[0m
+[39m    return [0m[1;35mrequest[0m[1;39m([0m[32m"get"[0m[39m, url, [0m[33mparams[0m[39m=[0m[35mparams[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m59[0m[39m, in request[0m
+[39m    return [0m[1;35msession.request[0m[1;39m([0m[33mmethod[0m[39m=[0m[35mmethod[0m[39m, [0m[33murl[0m[39m=[0m[35murl[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m589[0m[39m, in request[0m
+[39m    resp = [0m[1;35mself.send[0m[1;39m([0m[39mprep, **send_kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m703[0m[39m, in send[0m
+[39m    r = [0m[1;35madapter.send[0m[1;39m([0m[39mrequest, **kwargs[0m[1;39m)[0m
+[39m        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m688[0m[39m, in send[0m
+[39m    raise [0m[1;35mConnectTimeout[0m[1;39m([0m[39me, [0m[33mrequest[0m[39m=[0m[35mrequest[0m[1;39m)[0m
+[39mrequests.exceptions.ConnectTimeout: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[1m>[0m, [32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1m)[0m[1m)[0m
+
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m──────────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m───────────────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mrun.py[0m:218 in    [31m│[0m
+[31m│[0m _run_blocks                                                                                      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m215 [0m[2m│   │   │   [0m[94mcontinue[0m                                                                       [31m│[0m
+[31m│[0m   [2m216 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m217 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m218 [2m│   │   │   [0m[94mawait[0m blk.run()                                                                [31m│[0m
+[31m│[0m   [2m219 [0m[2m│   │   [0m[94mexcept[0m RunnerError [94mas[0m err:                                                         [31m│[0m
+[31m│[0m   [2m220 [0m[2m│   │   │   [0mlogger.error(                                                                  [31m│[0m
+[31m│[0m   [2m221 [0m[2m│   │   │   │   [0m[33m"[0m[33mBlock run completed.[0m[33m"[0m,                                                    [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1mextract_l[0m [31m│[0m
+[31m│[0m [1moad.py[0m:509 in run                                                                                [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m506 [0m[2m│   │   │   [0m[2m# TODO: legacy `meltano elt` style logging should be deprecated[0m                [31m│[0m
+[31m│[0m   [2m507 [0m[2m│   │   │   [0mlegacy_log_handler = [96mself[0m.output_logger.out([33m"[0m[33mmeltano[0m[33m"[0m, logger)                 [31m│[0m
+[31m│[0m   [2m508 [0m[2m│   │   │   [0m[94mwith[0m legacy_log_handler.redirect_logging():                                    [31m│[0m
+[31m│[0m [31m❱ [0m509 [2m│   │   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.run_with_job()[0m                                                  [31m│[0m
+[31m│[0m   [2m510 [0m[2m│   │   │   │   [0m[94mreturn[0m                                                                     [31m│[0m
+[31m│[0m   [2m511 [0m[2m│   │   [0m[94melse[0m:                                                                              [31m│[0m
+[31m│[0m   [2m512 [0m[2m│   │   │   [0mlogger.warning(                                                                [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1mextract_l[0m [31m│[0m
+[31m│[0m [1moad.py[0m:549 in run_with_job                                                                       [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m546 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m547 [0m[2m│   │   [0m[94mwith[0m closing([96mself[0m.context.session) [94mas[0m session:                                     [31m│[0m
+[31m│[0m   [2m548 [0m[2m│   │   │   [0m[94masync[0m [94mwith[0m job.run(session):                                                   [31m│[0m
+[31m│[0m [31m❱ [0m549 [2m│   │   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m.execute()[0m                                                       [31m│[0m
+[31m│[0m   [2m550 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m551 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92mterminate[0m([96mself[0m, *, graceful: [96mbool[0m = [94mFalse[0m) -> [94mNone[0m:                          [31m│[0m
+[31m│[0m   [2m552 [0m[2;90m│   │   [0m[33m"""Terminate an in flight ExtractLoad execution, potentially disruptive.[0m           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1mextract_l[0m [31m│[0m
+[31m│[0m [1moad.py[0m:498 in execute                                                                            [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m495 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m496 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92mexecute[0m([96mself[0m) -> [94mNone[0m:                                                       [31m│[0m
+[31m│[0m   [2m497 [0m[2;90m│   │   [0m[33m"""Build the IO chain and execute the actual ELT task."""[0m                          [31m│[0m
+[31m│[0m [31m❱ [0m498 [2m│   │   [0m[1;4;94masync[0m[1;4m [0m[1;4;94mwith[0m[1;4m [0m[1;4;96mself[0m[1;4m._start_blocks():[0m                                                   [31m│[0m
+[31m│[0m   [2m499 [0m[2m│   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._link_io()[0m                                                          [31m│[0m
+[31m│[0m   [2m500 [0m[2m│   │   │   [0m[1;4mmanager = ELBExecutionManager([0m[1;4;96mself[0m[1;4m)[0m                                            [31m│[0m
+[31m│[0m   [2m501 [0m[2m│   │   │   [0m[1;4;94mawait[0m[1;4m manager.run()[0m                                                            [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/[0m[1mcontextlib.py[0m:204 in __aenter__                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m201 [0m[2m│   │   [0m[2m# they are only needed for recreation, which is not possible anymore[0m               [31m│[0m
+[31m│[0m   [2m202 [0m[2m│   │   [0m[94mdel[0m [96mself[0m.args, [96mself[0m.kwds, [96mself[0m.func                                                [31m│[0m
+[31m│[0m   [2m203 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m204 [2m│   │   │   [0m[94mreturn[0m [94mawait[0m anext([96mself[0m.gen)                                                   [31m│[0m
+[31m│[0m   [2m205 [0m[2m│   │   [0m[1;4;94mexcept[0m[1;4m [0m[1;4;96mStopAsyncIteration[0m[1;4m:[0m                                                         [31m│[0m
+[31m│[0m   [2m206 [0m[2m│   │   │   [0m[1;4;94mraise[0m[1;4m [0m[1;4;96mRuntimeError[0m[1;4m([0m[1;4;33m"[0m[1;4;33mgenerator didn[0m[1;4;33m'[0m[1;4;33mt yield[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;94mNone[0m                         [31m│[0m
+[31m│[0m   [2m207 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1mextract_l[0m [31m│[0m
+[31m│[0m [1moad.py[0m:638 in _start_blocks                                                                      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m635 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m   [2m636 [0m[2m│   │   │   [0m[94mfor[0m block [95min[0m [96mself[0m.blocks:                                                      [31m│[0m
+[31m│[0m   [2m637 [0m[2m│   │   │   │   [0m[94mawait[0m block.pre([96mself[0m.context)                                              [31m│[0m
+[31m│[0m [31m❱ [0m638 [2m│   │   │   │   [0m[94mawait[0m block.start()                                                        [31m│[0m
+[31m│[0m   [2m639 [0m[2m│   │   │   [0m[94myield[0m                                                                          [31m│[0m
+[31m│[0m   [2m640 [0m[2m│   │   [0m[94mfinally[0m:                                                                           [31m│[0m
+[31m│[0m   [2m641 [0m[2m│   │   │   [0m[1;4;94mawait[0m[1;4m [0m[1;4;96mself[0m[1;4m._cleanup()[0m                                                          [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/block/[0m[1msinger.py[0m [31m│[0m
+[31m│[0m :336 in start                                                                                    [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m333 [0m[2m│   │   │   │   [0mstderr=asyncio.subprocess.PIPE,  [2m# Log[0m                                     [31m│[0m
+[31m│[0m   [2m334 [0m[2m│   │   │   [0m)                                                                              [31m│[0m
+[31m│[0m   [2m335 [0m[2m│   │   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                                           [31m│[0m
+[31m│[0m [31m❱ [0m336 [2m│   │   │   [0m[1;4;94mraise[0m[1;4m RunnerError([0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mCannot start plugin [0m[1;4;33m{[0m[1;4;96mself[0m[1;4m.string_id[0m[1;4;33m}[0m[1;4;33m: [0m[1;4;33m{[0m[1;4merr[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;96merr[0m     [31m│[0m
+[31m│[0m   [2m337 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m338 [0m[2m│   [0m[94masync[0m [94mdef[0m[90m [0m[92mstop[0m([96mself[0m, *, kill: [96mbool[0m = [94mTrue[0m) -> [94mNone[0m:                                    [31m│[0m
+[31m│[0m   [2m339 [0m[2;90m│   │   [0m[33m"""Stop (kill) the underlying process and cancel output proxying.[0m                  [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mRunnerError: [0mCannot start plugin tap-rest-api-msdk: Catalog discovery failed: command [1m[[0m[32m'/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk'[0m, [32m'--config'[0m, 
+[32m'/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json'[0m, [32m'--discover'[0m[1m][0m returned [1;36m1[0m with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m174[0m, in _new_conn
+    conn = [1;35mconnection.create_connection[0m[1m([0m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m95[0m, in create_connection
+    raise err
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m85[0m, in create_connection
+    [1;35msock.connect[0m[1m([0msa[1m)[0m
+TimeoutError: [1m[[0mErrno [1;36m110[0m[1m][0m Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m716[0m, in urlopen
+    httplib_response = [1;35mself._make_request[0m[1m([0m
+                       ^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m404[0m, in _make_request
+    [1;35mself._validate_conn[0m[1m([0mconn[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m1061[0m, in _validate_conn
+    [1;35mconn.connect[0m[1m([0m[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m363[0m, in connect
+    self.sock = conn = [1;35mself._new_conn[0m[1m([0m[1m)[0m
+                       ^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m179[0m, in _new_conn
+    raise [1;35mConnectTimeoutError[0m[1m([0m
+urllib3.exceptions.ConnectTimeoutError: [1m([0m[1m<[0m[1;95murllib3.connection.HTTPSConnection[0m[39m object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m667[0m[39m, in send[0m
+[39m    resp = [0m[1;35mconn.urlopen[0m[1;39m([0m
+[39m           ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m[39m, line [0m[1;36m802[0m[39m, in urlopen[0m
+[39m    retries = [0m[1;35mretries.increment[0m[1;39m([0m
+[39m              ^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py"[0m[39m, line [0m[1;36m594[0m[39m, in increment[0m
+[39m    raise [0m[1;35mMaxRetryError[0m[1;39m([0m[39m_pool, url, error or [0m[1;35mResponseError[0m[1;39m([0m[39mcause[0m[1;39m)[0m[1;39m)[0m
+[39murllib3.exceptions.MaxRetryError: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk"[0m[39m, line [0m[1;36m8[0m[39m, in <module>[0m
+[39m    [0m[1;35msys.exit[0m[1;39m([0m[1;35mTapRestApiMsdk.cli[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m             ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1442[0m[39m, in __call__[0m
+[39m    return [0m[1;35mself.main[0m[1;39m([0m[39m*args, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1362[0m[39m, in main[0m
+[39m    with [0m[1;35mself.make_context[0m[1;39m([0m[39mprog_name, args, **extra[0m[1;39m)[0m[39m as ctx:[0m
+[39m         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1186[0m[39m, in make_context[0m
+[39m    [0m[1;35mself.parse_args[0m[1;39m([0m[39mctx, args[0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1197[0m[39m, in parse_args[0m
+[39m    value, args = [0m[1;35mparam.handle_parse_result[0m[1;39m([0m[39mctx, opts, args[0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2416[0m[39m, in handle_parse_result[0m
+[39m    value = [0m[1;35mself.process_value[0m[1;39m([0m[39mctx, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2355[0m[39m, in process_value[0m
+[39m    value = [0m[1;35mself.callback[0m[1;39m([0m[39mctx, self, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m539[0m[39m, in cb_discover[0m
+[39m    [0m[1;35mtap.run_discovery[0m[1;39m([0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m294[0m[39m, in run_discovery[0m
+[39m    catalog_text = self.catalog_json_text[0m
+[39m                   ^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m314[0m[39m, in catalog_json_text[0m
+[39m    return [0m[1;35mdump_json[0m[1;39m([0m[39mself.catalog_dict, [0m[33mindent[0m[39m=[0m[1;36m2[0m[1;39m)[0m
+[39m                     ^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m305[0m[39m, in catalog_dict[0m
+[39m    return [0m[1;35mt.cast[0m[1;39m([0m[39mdict, [0m[1;35mself._singer_catalog.to_dict[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m                        ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m325[0m[39m, in _singer_catalog[0m
+[39m    for stream in [0m[1;35mself.streams.values[0m[1;39m([0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m134[0m[39m, in streams[0m
+[39m    for stream in [0m[1;35mself.load_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m358[0m[39m, in load_streams[0m
+[39m    for stream in [0m[1;35mself.discover_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m494[0m[39m, in discover_streams[0m
+[39m    schema = [0m[1;35mself.get_schema[0m[1;39m([0m
+[39m             ^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m608[0m[39m, in get_schema[0m
+[39m    r = [0m[1;35mrequests.get[0m[1;39m([0m
+[39m        ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m73[0m[39m, in get[0m
+[39m    return [0m[1;35mrequest[0m[1;39m([0m[32m"get"[0m[39m, url, [0m[33mparams[0m[39m=[0m[35mparams[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m59[0m[39m, in request[0m
+[39m    return [0m[1;35msession.request[0m[1;39m([0m[33mmethod[0m[39m=[0m[35mmethod[0m[39m, [0m[33murl[0m[39m=[0m[35murl[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m589[0m[39m, in request[0m
+[39m    resp = [0m[1;35mself.send[0m[1;39m([0m[39mprep, **send_kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m703[0m[39m, in send[0m
+[39m    r = [0m[1;35madapter.send[0m[1;39m([0m[39mrequest, **kwargs[0m[1;39m)[0m
+[39m        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m688[0m[39m, in send[0m
+[39m    raise [0m[1;35mConnectTimeout[0m[1;39m([0m[39me, [0m[33mrequest[0m[39m=[0m[35mrequest[0m[1;39m)[0m
+[39mrequests.exceptions.ConnectTimeout: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[1m>[0m, [32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1m)[0m[1m)[0m
+
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m──────────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m───────────────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1m__init__.py[0m:104  [31m│[0m
+[31m│[0m in _run_cli                                                                                      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m101 [0m[2;33m│   [0m[33m"""[0m                                                                                    [31m│[0m
+[31m│[0m   [2m102 [0m[2m│   [0m[94mtry[0m:                                                                                   [31m│[0m
+[31m│[0m   [2m103 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m104 [2m│   │   │   [0mcli(obj={[33m"[0m[33mproject[0m[33m"[0m: [94mNone[0m})                                                     [31m│[0m
+[31m│[0m   [2m105 [0m[2m│   │   [0m[94mexcept[0m ProjectReadonly [94mas[0m err:                                                     [31m│[0m
+[31m│[0m   [2m106 [0m[2m│   │   │   [0m[94mraise[0m CliError(                                                                [31m│[0m
+[31m│[0m   [2m107 [0m[2m│   │   │   │   [0m[33mf[0m[33m"[0m[33mThe requested action could not be completed: [0m[33m{[0merr[33m}[0m[33m"[0m,  [2m# noqa: EM102[0m      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mcore.py[0m:1442 in        [31m│[0m
+[31m│[0m __call__                                                                                         [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m1439 [0m[2m│   [0m                                                                                      [31m│[0m
+[31m│[0m   [2m1440 [0m[2m│   [0m[94mdef[0m[90m [0m[92m__call__[0m([96mself[0m, *args: t.Any, **kwargs: t.Any) -> t.Any:                           [31m│[0m
+[31m│[0m   [2m1441 [0m[2;90m│   │   [0m[33m"""Alias for :meth:`main`."""[0m                                                     [31m│[0m
+[31m│[0m [31m❱ [0m1442 [2m│   │   [0m[94mreturn[0m [1;4;96mself[0m[1;4m.main(*args, **kwargs)[0m                                                 [31m│[0m
+[31m│[0m   [2m1443 [0m                                                                                          [31m│[0m
+[31m│[0m   [2m1444 [0m                                                                                          [31m│[0m
+[31m│[0m   [2m1445 [0m[94mclass[0m[90m [0m[4;92m_FakeSubclassCheck[0m([96mtype[0m):                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mcli.py[0m:46 in     [31m│[0m
+[31m│[0m main                                                                                             [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 43 [0m[2;33m│   │   │   [0m[33margs: Positional arguments for the Click group.[0m                                [31m│[0m
+[31m│[0m   [2m 44 [0m[2;33m│   │   │   [0m[33mkwargs: Keyword arguments for the Click group.[0m                                 [31m│[0m
+[31m│[0m   [2m 45 [0m[2;33m│   │   [0m[33m"""[0m                                                                                [31m│[0m
+[31m│[0m [31m❱ [0m 46 [2m│   │   [0m[94mreturn[0m [1;4;96msuper[0m[1;4m().main(*args, windows_expand_args=[0m[1;4;94mFalse[0m[1;4m, **kwargs)[0m                    [31m│[0m
+[31m│[0m   [2m 47 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m 48 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m 49 [0m[1;95m@click[0m.group(                                                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mcore.py[0m:1363 in main   [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m1360 [0m[2m│   │   [0m[94mtry[0m:                                                                              [31m│[0m
+[31m│[0m   [2m1361 [0m[2m│   │   │   [0m[94mtry[0m:                                                                          [31m│[0m
+[31m│[0m   [2m1362 [0m[2m│   │   │   │   [0m[94mwith[0m [96mself[0m.make_context(prog_name, args, **extra) [94mas[0m ctx:                  [31m│[0m
+[31m│[0m [31m❱ [0m1363 [2m│   │   │   │   │   [0mrv = [96mself[0m.invoke(ctx)                                                 [31m│[0m
+[31m│[0m   [2m1364 [0m[2m│   │   │   │   │   [0m[94mif[0m [95mnot[0m standalone_mode:                                               [31m│[0m
+[31m│[0m   [2m1365 [0m[2m│   │   │   │   │   │   [0m[94mreturn[0m rv                                                         [31m│[0m
+[31m│[0m   [2m1366 [0m[2m│   │   │   │   │   [0m[2m# it's not safe to `ctx.exit(rv)` here![0m                               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mutils.py[0m:582 in  [31m│[0m
+[31m│[0m invoke                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m579 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].add_contexts(CliContext.from_click_context(ctx))            [31m│[0m
+[31m│[0m   [2m580 [0m[2m│   │   [0m[2m# Typing these mixin hierarchies is a bit messy, so we'll just ignore it here[0m      [31m│[0m
+[31m│[0m   [2m581 [0m[2m│   │   [0m[2m# https://mypy.readthedocs.io/en/latest/more_types.html#mixin-classes[0m              [31m│[0m
+[31m│[0m [31m❱ [0m582 [2m│   │   [0m[1;4;96msuper[0m[1;4m().invoke(ctx)[0m  [2m# type: ignore[misc][0m                                          [31m│[0m
+[31m│[0m   [2m583 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m584 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m585 [0m[94mclass[0m[90m [0m[4;92mInstrumentedDefaultGroup[0m(InstrumentedGroupMixin, DefaultGroup, DYMGroup):            [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mcore.py[0m:1830 in invoke [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m1827 [0m[2m│   │   │   │   [0m[96msuper[0m().invoke(ctx)                                                       [31m│[0m
+[31m│[0m   [2m1828 [0m[2m│   │   │   │   [0msub_ctx = cmd.make_context(cmd_name, args, parent=ctx)                    [31m│[0m
+[31m│[0m   [2m1829 [0m[2m│   │   │   │   [0m[94mwith[0m sub_ctx:                                                             [31m│[0m
+[31m│[0m [31m❱ [0m1830 [2m│   │   │   │   │   [0m[94mreturn[0m _process_result([1;4msub_ctx.command.invoke(sub_ctx)[0m)               [31m│[0m
+[31m│[0m   [2m1831 [0m[2m│   │   [0m                                                                                  [31m│[0m
+[31m│[0m   [2m1832 [0m[2m│   │   [0m[2m# In chain mode we create the contexts step by step, but after the[0m                [31m│[0m
+[31m│[0m   [2m1833 [0m[2m│   │   [0m[2m# base command has been invoked.  Because at that point we do not[0m                 [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mutils.py[0m:631 in  [31m│[0m
+[31m│[0m invoke                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m628 [0m[2m│   │   [0m[94mif[0m ctx.obj.get([33m"[0m[33mtracker[0m[33m"[0m):                                                         [31m│[0m
+[31m│[0m   [2m629 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].add_contexts(CliContext.from_click_context(ctx))            [31m│[0m
+[31m│[0m   [2m630 [0m[2m│   │   │   [0mctx.obj[[33m"[0m[33mtracker[0m[33m"[0m].track_command_event(CliEvent.started)                       [31m│[0m
+[31m│[0m [31m❱ [0m631 [2m│   │   [0m[1;4;96msuper[0m[1;4m().invoke(ctx)[0m                                                                [31m│[0m
+[31m│[0m   [2m632 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m633 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m634 [0m[94mclass[0m[90m [0m[4;92mAutoInstallBehavior[0m(StrEnum):                                                        [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mcore.py[0m:1226 in invoke [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m1223 [0m[2m│   │   │   [0mecho(style(message, fg=[33m"[0m[33mred[0m[33m"[0m), err=[94mTrue[0m)                                      [31m│[0m
+[31m│[0m   [2m1224 [0m[2m│   │   [0m                                                                                  [31m│[0m
+[31m│[0m   [2m1225 [0m[2m│   │   [0m[94mif[0m [96mself[0m.callback [95mis[0m [95mnot[0m [94mNone[0m:                                                     [31m│[0m
+[31m│[0m [31m❱ [0m1226 [2m│   │   │   [0m[94mreturn[0m [1;4mctx.invoke([0m[1;4;96mself[0m[1;4m.callback, **ctx.params)[0m                                [31m│[0m
+[31m│[0m   [2m1227 [0m[2m│   [0m                                                                                      [31m│[0m
+[31m│[0m   [2m1228 [0m[2m│   [0m[94mdef[0m[90m [0m[92mshell_complete[0m([96mself[0m, ctx: Context, incomplete: [96mstr[0m) -> [96mlist[0m[CompletionItem]:      [31m│[0m
+[31m│[0m   [2m1229 [0m[2;90m│   │   [0m[33m"""Return a list of completions for the incomplete value. Looks[0m                   [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mcore.py[0m:794 in invoke  [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 791 [0m[2m│   │   [0m                                                                                  [31m│[0m
+[31m│[0m   [2m 792 [0m[2m│   │   [0m[94mwith[0m augment_usage_errors([96mself[0m):                                                  [31m│[0m
+[31m│[0m   [2m 793 [0m[2m│   │   │   [0m[94mwith[0m ctx:                                                                     [31m│[0m
+[31m│[0m [31m❱ [0m 794 [2m│   │   │   │   [0m[94mreturn[0m [1;4mcallback(*args, **kwargs)[0m                                          [31m│[0m
+[31m│[0m   [2m 795 [0m[2m│   [0m                                                                                      [31m│[0m
+[31m│[0m   [2m 796 [0m[2m│   [0m[94mdef[0m[90m [0m[92mforward[0m([96mself[0m, cmd: Command, /, *args: t.Any, **kwargs: t.Any) -> t.Any:           [31m│[0m
+[31m│[0m   [2m 797 [0m[2;90m│   │   [0m[33m"""Similar to :meth:`invoke` but fills in default keyword[0m                         [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mparams.py[0m:75 in  [31m│[0m
+[31m│[0m decorate                                                                                         [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 72 [0m[2m│   │   [0m[94mif[0m database_uri:                                                                   [31m│[0m
+[31m│[0m   [2m 73 [0m[2m│   │   │   [0mProjectSettingsService.config_override[[33m"[0m[33mdatabase_uri[0m[33m"[0m] = database_uri          [31m│[0m
+[31m│[0m   [2m 74 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m [31m❱ [0m 75 [2m│   │   [0m[94mreturn[0m [1;4mfunc(*args, **kwargs)[0m                                                       [31m│[0m
+[31m│[0m   [2m 76 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m 77 [0m[2m│   [0m[94mreturn[0m functools.update_wrapper(decorate, func)                                        [31m│[0m
+[31m│[0m   [2m 78 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mparams.py[0m:165 in [31m│[0m
+[31m│[0m decorate                                                                                         [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m162 [0m[2m│   │   │   │   [0m[94mexcept[0m MigrationError [94mas[0m err:                                              [31m│[0m
+[31m│[0m   [2m163 [0m[2m│   │   │   │   │   [0m[94mraise[0m CliError([96mstr[0m(err)) [94mfrom[0m[90m [0m[4;96merr[0m                                      [31m│[0m
+[31m│[0m   [2m164 [0m[2m│   │   │   [0m                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m165 [2m│   │   │   [0m[1;4mfunc(project, *args, **kwargs)[0m                                                 [31m│[0m
+[31m│[0m   [2m166 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m167 [0m[2m│   │   [0m[94mreturn[0m functools.update_wrapper(decorate, func)                                    [31m│[0m
+[31m│[0m   [2m168 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/click/[0m[1mdecorators.py[0m:34 in    [31m│[0m
+[31m│[0m new_func                                                                                         [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 31 [0m[2;33m│   [0m[33m"""[0m                                                                                    [31m│[0m
+[31m│[0m   [2m 32 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m 33 [0m[2m│   [0m[94mdef[0m[90m [0m[92mnew_func[0m(*args: P.args, **kwargs: P.kwargs) -> R:                                  [31m│[0m
+[31m│[0m [31m❱ [0m 34 [2m│   │   [0m[94mreturn[0m [1;4mf(get_current_context(), *args, **kwargs)[0m                                   [31m│[0m
+[31m│[0m   [2m 35 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m 36 [0m[2m│   [0m[94mreturn[0m update_wrapper(new_func, f)                                                     [31m│[0m
+[31m│[0m   [2m 37 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/core/utils/[0m[1m__init__.[0m [31m│[0m
+[31m│[0m [1mpy[0m:80 in wrapper                                                                                 [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 77 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m 78 [0m[2m│   [0m[1;95m@functools[0m.wraps(func)                                                                 [31m│[0m
+[31m│[0m   [2m 79 [0m[2m│   [0m[94mdef[0m[90m [0m[92mwrapper[0m(*args, **kwargs):  [2m# noqa: ANN002, ANN003, ANN202[0m                          [31m│[0m
+[31m│[0m [31m❱ [0m 80 [2m│   │   [0m[94mreturn[0m [1;4masyncio.run(func(*args, **kwargs))[0m                                          [31m│[0m
+[31m│[0m   [2m 81 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m 82 [0m[2m│   [0m[94mreturn[0m wrapper                                                                         [31m│[0m
+[31m│[0m   [2m 83 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/asyncio/[0m[1mrunners.py[0m:190 in run                                                [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m187 [0m[2m│   │   │   [0m[33m"[0m[33masyncio.run() cannot be called from a running event loop[0m[33m"[0m)                    [31m│[0m
+[31m│[0m   [2m188 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m189 [0m[2m│   [0m[94mwith[0m Runner(debug=debug) [94mas[0m runner:                                                    [31m│[0m
+[31m│[0m [31m❱ [0m190 [2m│   │   [0m[94mreturn[0m [1;4mrunner.run(main)[0m                                                            [31m│[0m
+[31m│[0m   [2m191 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m192 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m193 [0m[94mdef[0m[90m [0m[92m_cancel_all_tasks[0m(loop):                                                               [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/asyncio/[0m[1mrunners.py[0m:118 in run                                                [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m115 [0m[2m│   │   [0m                                                                                   [31m│[0m
+[31m│[0m   [2m116 [0m[2m│   │   [0m[96mself[0m._interrupt_count = [94m0[0m                                                          [31m│[0m
+[31m│[0m   [2m117 [0m[2m│   │   [0m[94mtry[0m:                                                                               [31m│[0m
+[31m│[0m [31m❱ [0m118 [2m│   │   │   [0m[94mreturn[0m [96mself[0m._loop.run_until_complete(task)                                     [31m│[0m
+[31m│[0m   [2m119 [0m[2m│   │   [0m[94mexcept[0m exceptions.CancelledError:                                                  [31m│[0m
+[31m│[0m   [2m120 [0m[2m│   │   │   [0m[94mif[0m [96mself[0m._interrupt_count > [94m0[0m:                                                  [31m│[0m
+[31m│[0m   [2m121 [0m[2m│   │   │   │   [0muncancel = [96mgetattr[0m(task, [33m"[0m[33muncancel[0m[33m"[0m, [94mNone[0m)                                 [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/usr/lib/python3.11/asyncio/[0m[1mbase_events.py[0m:653 in run_until_complete                             [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m 650 [0m[2m│   │   [0m[94mif[0m [95mnot[0m future.done():                                                             [31m│[0m
+[31m│[0m   [2m 651 [0m[2m│   │   │   [0m[94mraise[0m [96mRuntimeError[0m([33m'[0m[33mEvent loop stopped before Future completed.[0m[33m'[0m)             [31m│[0m
+[31m│[0m   [2m 652 [0m[2m│   │   [0m                                                                                  [31m│[0m
+[31m│[0m [31m❱ [0m 653 [2m│   │   [0m[94mreturn[0m [1;4mfuture.result()[0m                                                            [31m│[0m
+[31m│[0m   [2m 654 [0m[2m│   [0m                                                                                      [31m│[0m
+[31m│[0m   [2m 655 [0m[2m│   [0m[94mdef[0m[90m [0m[92mstop[0m([96mself[0m):                                                                       [31m│[0m
+[31m│[0m   [2m 656 [0m[2;90m│   │   [0m[33m"""Stop running the event loop.[0m                                                   [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mrun.py[0m:186 in    [31m│[0m
+[31m│[0m run                                                                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m183 [0m[2m│   │   [0m[94mawait[0m _run_blocks(tracker, parsed_blocks, dry_run=dry_run)                         [31m│[0m
+[31m│[0m   [2m184 [0m[2m│   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                                               [31m│[0m
+[31m│[0m   [2m185 [0m[2m│   │   [0mtracker.track_command_event(CliEvent.failed)                                       [31m│[0m
+[31m│[0m [31m❱ [0m186 [2m│   │   [0m[1;4;94mraise[0m[1;4m err[0m                                                                          [31m│[0m
+[31m│[0m   [2m187 [0m[2m│   [0mtracker.track_command_event(CliEvent.completed)                                        [31m│[0m
+[31m│[0m   [2m188 [0m                                                                                           [31m│[0m
+[31m│[0m   [2m189 [0m                                                                                           [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mrun.py[0m:183 in    [31m│[0m
+[31m│[0m run                                                                                              [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m180 [0m[2m│   [0m)                                                                                      [31m│[0m
+[31m│[0m   [2m181 [0m[2m│   [0m                                                                                       [31m│[0m
+[31m│[0m   [2m182 [0m[2m│   [0m[94mtry[0m:                                                                                   [31m│[0m
+[31m│[0m [31m❱ [0m183 [2m│   │   [0m[94mawait[0m _run_blocks(tracker, parsed_blocks, dry_run=dry_run)                         [31m│[0m
+[31m│[0m   [2m184 [0m[2m│   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                                               [31m│[0m
+[31m│[0m   [2m185 [0m[2m│   │   [0mtracker.track_command_event(CliEvent.failed)                                       [31m│[0m
+[31m│[0m   [2m186 [0m[2m│   │   [0m[1;4;94mraise[0m[1;4m err[0m                                                                          [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1mrun.py[0m:230 in    [31m│[0m
+[31m│[0m _run_blocks                                                                                      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m227 [0m[2m│   │   │   [0m)                                                                              [31m│[0m
+[31m│[0m   [2m228 [0m[2m│   │   │   [0m[94mwith[0m tracker.with_contexts(tracking_ctx):                                      [31m│[0m
+[31m│[0m   [2m229 [0m[2m│   │   │   │   [0mtracker.track_block_event(blk_name, BlockEvents.failed)                    [31m│[0m
+[31m│[0m [31m❱ [0m230 [2m│   │   │   [0m[1;4;94mraise[0m[1;4m CliError([0m                                                                [31m│[0m
+[31m│[0m   [2m231 [0m[2m│   │   │   │   [0m[1;4;33mf[0m[1;4;33m"[0m[1;4;33mRun invocation could not be completed as block failed: [0m[1;4;33m{[0m[1;4merr[0m[1;4;33m}[0m[1;4;33m"[0m[1;4m,  [0m[1;2;4m# noqa[0m   [31m│[0m
+[31m│[0m   [2m232 [0m[2m│   │   │   [0m[1;4m) [0m[1;4;94mfrom[0m[1;4;90m [0m[1;4;96merr[0m                                                                     [31m│[0m
+[31m│[0m   [2m233 [0m[2m│   │   [0m[94mexcept[0m [96mException[0m [94mas[0m bare_err:                                                      [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mCliError: [0mRun invocation could not be completed as block failed: Cannot start plugin tap-rest-api-msdk: Catalog discovery failed: command 
+[1m[[0m[32m'/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk'[0m, [32m'--config'[0m, 
+[32m'/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json'[0m, [32m'--discover'[0m[1m][0m returned [1;36m1[0m with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m174[0m, in _new_conn
+    conn = [1;35mconnection.create_connection[0m[1m([0m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m95[0m, in create_connection
+    raise err
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m85[0m, in create_connection
+    [1;35msock.connect[0m[1m([0msa[1m)[0m
+TimeoutError: [1m[[0mErrno [1;36m110[0m[1m][0m Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m716[0m, in urlopen
+    httplib_response = [1;35mself._make_request[0m[1m([0m
+                       ^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m404[0m, in _make_request
+    [1;35mself._validate_conn[0m[1m([0mconn[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m1061[0m, in _validate_conn
+    [1;35mconn.connect[0m[1m([0m[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m363[0m, in connect
+    self.sock = conn = [1;35mself._new_conn[0m[1m([0m[1m)[0m
+                       ^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m179[0m, in _new_conn
+    raise [1;35mConnectTimeoutError[0m[1m([0m
+urllib3.exceptions.ConnectTimeoutError: [1m([0m[1m<[0m[1;95murllib3.connection.HTTPSConnection[0m[39m object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m667[0m[39m, in send[0m
+[39m    resp = [0m[1;35mconn.urlopen[0m[1;39m([0m
+[39m           ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m[39m, line [0m[1;36m802[0m[39m, in urlopen[0m
+[39m    retries = [0m[1;35mretries.increment[0m[1;39m([0m
+[39m              ^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py"[0m[39m, line [0m[1;36m594[0m[39m, in increment[0m
+[39m    raise [0m[1;35mMaxRetryError[0m[1;39m([0m[39m_pool, url, error or [0m[1;35mResponseError[0m[1;39m([0m[39mcause[0m[1;39m)[0m[1;39m)[0m
+[39murllib3.exceptions.MaxRetryError: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk"[0m[39m, line [0m[1;36m8[0m[39m, in <module>[0m
+[39m    [0m[1;35msys.exit[0m[1;39m([0m[1;35mTapRestApiMsdk.cli[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m             ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1442[0m[39m, in __call__[0m
+[39m    return [0m[1;35mself.main[0m[1;39m([0m[39m*args, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1362[0m[39m, in main[0m
+[39m    with [0m[1;35mself.make_context[0m[1;39m([0m[39mprog_name, args, **extra[0m[1;39m)[0m[39m as ctx:[0m
+[39m         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1186[0m[39m, in make_context[0m
+[39m    [0m[1;35mself.parse_args[0m[1;39m([0m[39mctx, args[0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1197[0m[39m, in parse_args[0m
+[39m    value, args = [0m[1;35mparam.handle_parse_result[0m[1;39m([0m[39mctx, opts, args[0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2416[0m[39m, in handle_parse_result[0m
+[39m    value = [0m[1;35mself.process_value[0m[1;39m([0m[39mctx, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2355[0m[39m, in process_value[0m
+[39m    value = [0m[1;35mself.callback[0m[1;39m([0m[39mctx, self, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m539[0m[39m, in cb_discover[0m
+[39m    [0m[1;35mtap.run_discovery[0m[1;39m([0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m294[0m[39m, in run_discovery[0m
+[39m    catalog_text = self.catalog_json_text[0m
+[39m                   ^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m314[0m[39m, in catalog_json_text[0m
+[39m    return [0m[1;35mdump_json[0m[1;39m([0m[39mself.catalog_dict, [0m[33mindent[0m[39m=[0m[1;36m2[0m[1;39m)[0m
+[39m                     ^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m305[0m[39m, in catalog_dict[0m
+[39m    return [0m[1;35mt.cast[0m[1;39m([0m[39mdict, [0m[1;35mself._singer_catalog.to_dict[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m                        ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m325[0m[39m, in _singer_catalog[0m
+[39m    for stream in [0m[1;35mself.streams.values[0m[1;39m([0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m134[0m[39m, in streams[0m
+[39m    for stream in [0m[1;35mself.load_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m358[0m[39m, in load_streams[0m
+[39m    for stream in [0m[1;35mself.discover_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m494[0m[39m, in discover_streams[0m
+[39m    schema = [0m[1;35mself.get_schema[0m[1;39m([0m
+[39m             ^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m608[0m[39m, in get_schema[0m
+[39m    r = [0m[1;35mrequests.get[0m[1;39m([0m
+[39m        ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m73[0m[39m, in get[0m
+[39m    return [0m[1;35mrequest[0m[1;39m([0m[32m"get"[0m[39m, url, [0m[33mparams[0m[39m=[0m[35mparams[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m59[0m[39m, in request[0m
+[39m    return [0m[1;35msession.request[0m[1;39m([0m[33mmethod[0m[39m=[0m[35mmethod[0m[39m, [0m[33murl[0m[39m=[0m[35murl[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m589[0m[39m, in request[0m
+[39m    resp = [0m[1;35mself.send[0m[1;39m([0m[39mprep, **send_kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m703[0m[39m, in send[0m
+[39m    r = [0m[1;35madapter.send[0m[1;39m([0m[39mrequest, **kwargs[0m[1;39m)[0m
+[39m        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m688[0m[39m, in send[0m
+[39m    raise [0m[1;35mConnectTimeout[0m[1;39m([0m[39me, [0m[33mrequest[0m[39m=[0m[35mrequest[0m[1;39m)[0m
+[39mrequests.exceptions.ConnectTimeout: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[1m>[0m, [32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1m)[0m[1m)[0m
+
+
+[3mThe above exception was the direct cause of the following exception:[0m
+
+[31m╭─[0m[31m──────────────────────────────[0m[31m [0m[1;31mTraceback [0m[1;2;31m(most recent call last)[0m[31m [0m[31m───────────────────────────────[0m[31m─╮[0m
+[31m│[0m [2m/home/ubuntu/.local/pipx/venvs/meltano/lib/python3.11/site-packages/meltano/cli/[0m[1m__init__.py[0m:114  [31m│[0m
+[31m│[0m in _run_cli                                                                                      [31m│[0m
+[31m│[0m                                                                                                  [31m│[0m
+[31m│[0m   [2m111 [0m[2m│   │   [0m[94mexcept[0m MeltanoError [94mas[0m err:                                                        [31m│[0m
+[31m│[0m   [2m112 [0m[2m│   │   │   [0mhandle_meltano_error(err)                                                      [31m│[0m
+[31m│[0m   [2m113 [0m[2m│   │   [0m[94mexcept[0m [96mException[0m [94mas[0m err:                                                           [31m│[0m
+[31m│[0m [31m❱ [0m114 [2m│   │   │   [0m[94mraise[0m CliError([33mf[0m[33m"[0m[33m{[0mtroubleshooting_message[33m}[0m[33m\n[0m[33m{[0merr[33m}[0m[33m"[0m) [94mfrom[0m[90m [0m[4;96merr[0m  [2m# noqa: EM102[0m    [31m│[0m
+[31m│[0m   [2m115 [0m[2m│   [0m[94mexcept[0m CliError [94mas[0m cli_error:                                                          [31m│[0m
+[31m│[0m   [2m116 [0m[2m│   │   [0m[1;4mcli_error.print()[0m                                                                  [31m│[0m
+[31m│[0m   [2m117 [0m[2m│   │   [0msys.exit(cli_error.exit_code)                                                      [31m│[0m
+[31m╰──────────────────────────────────────────────────────────────────────────────────────────────────╯[0m
+[1;91mCliError: [0mNeed help fixing this problem? Visit [4;94mhttp://melta.no/[0m for troubleshooting steps, or to
+join our friendly Slack community.
+
+Run invocation could not be completed as block failed: Cannot start plugin tap-rest-api-msdk: Catalog discovery failed: command 
+[1m[[0m[32m'/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk'[0m, [32m'--config'[0m, 
+[32m'/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json'[0m, [32m'--discover'[0m[1m][0m returned [1;36m1[0m with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m174[0m, in _new_conn
+    conn = [1;35mconnection.create_connection[0m[1m([0m
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m95[0m, in create_connection
+    raise err
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py"[0m, line [1;36m85[0m, in create_connection
+    [1;35msock.connect[0m[1m([0msa[1m)[0m
+TimeoutError: [1m[[0mErrno [1;36m110[0m[1m][0m Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback [1m([0mmost recent call last[1m)[0m:
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m716[0m, in urlopen
+    httplib_response = [1;35mself._make_request[0m[1m([0m
+                       ^^^^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m404[0m, in _make_request
+    [1;35mself._validate_conn[0m[1m([0mconn[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m, line [1;36m1061[0m, in _validate_conn
+    [1;35mconn.connect[0m[1m([0m[1m)[0m
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m363[0m, in connect
+    self.sock = conn = [1;35mself._new_conn[0m[1m([0m[1m)[0m
+                       ^^^^^^^^^^^^^^^^
+  File [32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py"[0m, line [1;36m179[0m, in _new_conn
+    raise [1;35mConnectTimeoutError[0m[1m([0m
+urllib3.exceptions.ConnectTimeoutError: [1m([0m[1m<[0m[1;95murllib3.connection.HTTPSConnection[0m[39m object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m667[0m[39m, in send[0m
+[39m    resp = [0m[1;35mconn.urlopen[0m[1;39m([0m
+[39m           ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py"[0m[39m, line [0m[1;36m802[0m[39m, in urlopen[0m
+[39m    retries = [0m[1;35mretries.increment[0m[1;39m([0m
+[39m              ^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py"[0m[39m, line [0m[1;36m594[0m[39m, in increment[0m
+[39m    raise [0m[1;35mMaxRetryError[0m[1;39m([0m[39m_pool, url, error or [0m[1;35mResponseError[0m[1;39m([0m[39mcause[0m[1;39m)[0m[1;39m)[0m
+[39murllib3.exceptions.MaxRetryError: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[39m>, [0m[32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1;39m)[0m[1;39m)[0m
+
+[39mDuring handling of the above exception, another exception occurred:[0m
+
+[39mTraceback [0m[1;39m([0m[39mmost recent call last[0m[1;39m)[0m[39m:[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk"[0m[39m, line [0m[1;36m8[0m[39m, in <module>[0m
+[39m    [0m[1;35msys.exit[0m[1;39m([0m[1;35mTapRestApiMsdk.cli[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m             ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1442[0m[39m, in __call__[0m
+[39m    return [0m[1;35mself.main[0m[1;39m([0m[39m*args, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1362[0m[39m, in main[0m
+[39m    with [0m[1;35mself.make_context[0m[1;39m([0m[39mprog_name, args, **extra[0m[1;39m)[0m[39m as ctx:[0m
+[39m         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1186[0m[39m, in make_context[0m
+[39m    [0m[1;35mself.parse_args[0m[1;39m([0m[39mctx, args[0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m1197[0m[39m, in parse_args[0m
+[39m    value, args = [0m[1;35mparam.handle_parse_result[0m[1;39m([0m[39mctx, opts, args[0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2416[0m[39m, in handle_parse_result[0m
+[39m    value = [0m[1;35mself.process_value[0m[1;39m([0m[39mctx, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py"[0m[39m, line [0m[1;36m2355[0m[39m, in process_value[0m
+[39m    value = [0m[1;35mself.callback[0m[1;39m([0m[39mctx, self, value[0m[1;39m)[0m
+[39m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m539[0m[39m, in cb_discover[0m
+[39m    [0m[1;35mtap.run_discovery[0m[1;39m([0m[1;39m)[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m294[0m[39m, in run_discovery[0m
+[39m    catalog_text = self.catalog_json_text[0m
+[39m                   ^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m314[0m[39m, in catalog_json_text[0m
+[39m    return [0m[1;35mdump_json[0m[1;39m([0m[39mself.catalog_dict, [0m[33mindent[0m[39m=[0m[1;36m2[0m[1;39m)[0m
+[39m                     ^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m305[0m[39m, in catalog_dict[0m
+[39m    return [0m[1;35mt.cast[0m[1;39m([0m[39mdict, [0m[1;35mself._singer_catalog.to_dict[0m[1;39m([0m[1;39m)[0m[1;39m)[0m
+[39m                        ^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m325[0m[39m, in _singer_catalog[0m
+[39m    for stream in [0m[1;35mself.streams.values[0m[1;39m([0m[1;39m)[0m
+[39m                  ^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m134[0m[39m, in streams[0m
+[39m    for stream in [0m[1;35mself.load_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py"[0m[39m, line [0m[1;36m358[0m[39m, in load_streams[0m
+[39m    for stream in [0m[1;35mself.discover_streams[0m[1;39m([0m[1;39m)[0m[39m:[0m
+[39m                  ^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m494[0m[39m, in discover_streams[0m
+[39m    schema = [0m[1;35mself.get_schema[0m[1;39m([0m
+[39m             ^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py"[0m[39m, line [0m[1;36m608[0m[39m, in get_schema[0m
+[39m    r = [0m[1;35mrequests.get[0m[1;39m([0m
+[39m        ^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m73[0m[39m, in get[0m
+[39m    return [0m[1;35mrequest[0m[1;39m([0m[32m"get"[0m[39m, url, [0m[33mparams[0m[39m=[0m[35mparams[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py"[0m[39m, line [0m[1;36m59[0m[39m, in request[0m
+[39m    return [0m[1;35msession.request[0m[1;39m([0m[33mmethod[0m[39m=[0m[35mmethod[0m[39m, [0m[33murl[0m[39m=[0m[35murl[0m[39m, **kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m589[0m[39m, in request[0m
+[39m    resp = [0m[1;35mself.send[0m[1;39m([0m[39mprep, **send_kwargs[0m[1;39m)[0m
+[39m           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py"[0m[39m, line [0m[1;36m703[0m[39m, in send[0m
+[39m    r = [0m[1;35madapter.send[0m[1;39m([0m[39mrequest, **kwargs[0m[1;39m)[0m
+[39m        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+[39m  File [0m[32m"/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py"[0m[39m, line [0m[1;36m688[0m[39m, in send[0m
+[39m    raise [0m[1;35mConnectTimeout[0m[1;39m([0m[39me, [0m[33mrequest[0m[39m=[0m[35mrequest[0m[1;39m)[0m
+[39mrequests.exceptions.ConnectTimeout: [0m[1;35mHTTPSConnectionPool[0m[1;39m([0m[33mhost[0m[39m=[0m[32m'api-dev.yuman.io'[0m[39m, [0m[33mport[0m[39m=[0m[1;36m443[0m[1;39m)[0m[39m: Max retries exceeded with url: [0m[35m/v1/[0m[95msites[0m[39m?[0m[33mper_page[0m[39m=[0m[1;36m50[0m[39m&[0m[33membed[0m[39m=[0m[35mfields[0m[39m [0m[1;39m([0m[39mCaused by [0m
+[1;35mConnectTimeoutError[0m[1;39m([0m[39m<urllib3.connection.HTTPSConnection object at [0m[1;36m0x7fa8f2f75950[0m[1m>[0m, [32m'Connection to api-dev.yuman.io timed out. [0m[32m([0m[32mconnect [0m[32mtimeout[0m[32m=[0m[32mNone[0m[32m)[0m[32m'[0m[1m)[0m[1m)[0m
+
+
+Need help fixing this problem? Visit http://melta.no/ for troubleshooting steps, or to
+join our friendly Slack community.
+
+Run invocation could not be completed as block failed: Cannot start plugin tap-rest-api-msdk: Catalog discovery failed: command ['/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk', '--config', '/mnt/data/elt/elt_meltano_project/.meltano/run/tap-rest-api-msdk/tap.e678915c-9942-4fd8-abd8-2aa20c0508a5.config.json', '--discover'] returned 1 with stderr:
+ Found path to a schema, not doing discovery.
+No schema found. Inferring schema from API call.
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 174, in _new_conn
+    conn = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 95, in create_connection
+    raise err
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/connection.py", line 85, in create_connection
+    sock.connect(sa)
+TimeoutError: [Errno 110] Connection timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 716, in urlopen
+    httplib_response = self._make_request(
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 404, in _make_request
+    self._validate_conn(conn)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1061, in _validate_conn
+    conn.connect()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 363, in connect
+    self.sock = conn = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connection.py", line 179, in _new_conn
+    raise ConnectTimeoutError(
+urllib3.exceptions.ConnectTimeoutError: (<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/connectionpool.py", line 802, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/urllib3/util/retry.py", line 594, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/bin/tap-rest-api-msdk", line 8, in <module>
+    sys.exit(TapRestApiMsdk.cli())
+             ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1442, in __call__
+    return self.main(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1362, in main
+    with self.make_context(prog_name, args, **extra) as ctx:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1186, in make_context
+    self.parse_args(ctx, args)
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 1197, in parse_args
+    value, args = param.handle_parse_result(ctx, opts, args)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2416, in handle_parse_result
+    value = self.process_value(ctx, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/click/core.py", line 2355, in process_value
+    value = self.callback(ctx, self, value)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 539, in cb_discover
+    tap.run_discovery()
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 294, in run_discovery
+    catalog_text = self.catalog_json_text
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 314, in catalog_json_text
+    return dump_json(self.catalog_dict, indent=2)
+                     ^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 305, in catalog_dict
+    return t.cast(dict, self._singer_catalog.to_dict())
+                        ^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 325, in _singer_catalog
+    for stream in self.streams.values()
+                  ^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 134, in streams
+    for stream in self.load_streams():
+                  ^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/singer_sdk/tap_base.py", line 358, in load_streams
+    for stream in self.discover_streams():
+                  ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 494, in discover_streams
+    schema = self.get_schema(
+             ^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/tap_rest_api_msdk/tap.py", line 608, in get_schema
+    r = requests.get(
+        ^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/mnt/data/elt/elt_meltano_project/.meltano/extractors/tap-rest-api-msdk/venv/lib/python3.11/site-packages/requests/adapters.py", line 688, in send
+    raise ConnectTimeout(e, request=request)
+requests.exceptions.ConnectTimeout: HTTPSConnectionPool(host='api-dev.yuman.io', port=443): Max retries exceeded with url: /v1/sites?per_page=50&embed=fields (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x7fa8f2f75950>, 'Connection to api-dev.yuman.io timed out. (connect timeout=None)'))
+

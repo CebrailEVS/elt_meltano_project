@@ -1,0 +1,231 @@
+version: 1
+default_environment: dev
+project_id: 70d9670f-9691-400e-aaf2-49a378faa6d2
+
+environments:
+- name: dev
+- name: staging
+- name: prod
+
+plugins:
+  extractors:
+  - name: tap-rest-api-msdk
+    variant: widen
+    pip_url: tap-rest-api-msdk
+    config:
+      api_url: https://api.yuman.io
+      auth_method: bearer_token
+      bearer_token: ${YUMAN_BEARER_TOKEN}
+      request_timeout: 300
+      request_records_limit: 1000
+      backoff_type: header
+      backoff_time_extension: 15
+      backoff_param: Retry-After
+      streams:
+      - name: yuman_clients
+        path: /v1/clients
+        records_path: $.items[*]
+        primary_keys: [id]
+        schema: extract/schemas/yuman_clients.json
+        replication_key: updated_at
+        paginator: "page_number_paginator"
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_sites
+        path: /v1/sites
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_materials
+        path: /v1/materials
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_material_categories
+        path: /v1/materials/categories
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: single_page_paginator
+
+      - name: yuman_products
+        path: /v1/products
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_workorders
+        path: /v1/workorders
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_workorder_demands
+        path: /v1/workorder_demands
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+          embed: fields
+
+      - name: yuman_users
+        path: /v1/users
+        records_path: $.items[*]
+        primary_keys: [id]
+        replication_key: updated_at
+        paginator: page_number_paginator
+        pagination_page_size: 50
+        pagination_initial_offset: 1
+        pagination_limit_per_page_param: per_page
+        pagination_page_number_field: page
+        next_page_token_path: $.page
+        params:
+          per_page: 50
+
+
+  - name: tap-oracle
+    variant: s7clarke10
+    pip_url: git+https://github.com/s7clarke10/pipelinewise-tap-oracle.git
+    config:
+      host: evs.easyweb.distrilog.net
+      port: 1521
+      service_name: DLOG
+      user: EVS_RO
+      password: ${ORACLE_PASSWORD}
+      filter_schemas: EVS
+      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-TASK_HAS_RESOURCES,EVS-LABEL_HAS_TASK]
+      ora_python_driver_type: thin
+      default_replication_method: INCREMENTAL
+      # Optimisations Oracle pour batch processing
+      batch_config:
+        encoding:
+          format: jsonl
+          compression: gzip
+        batch_size: 50000
+      stream_buffer_size: 8000
+      query_timeout: 1800
+      connection_pool_size: 10
+    select:
+    # TABLE CONTACT
+    - EVS-CONTACT.IDCONTACT
+    - EVS-CONTACT.IDCOMPANY
+    - EVS-CONTACT.MODIFICATION_DATE
+
+    # TABLE COMPANY
+    - EVS-COMPANY.*
+
+    # TABLE TASK_HAS_PRODUCT
+    - EVS-TASK_HAS_PRODUCT.*
+
+    # TABLE TASK_HAS_RESOURCES
+    - EVS-TASK_HAS_RESOURCES.IDTASK
+    - EVS-TASK_HAS_RESOURCES.IDRESOURCES
+
+    # TABLE LABEL_HAS_TASK
+    - EVS-LABEL_HAS_TASK.*
+    metadata:
+      EVS-CONTACT:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+        key-properties: IDCONTACT
+      EVS-COMPANY:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+        key-properties: IDCOMPANY
+      EVS-TASK_HAS_PRODUCT:
+        replication-method: INCREMENTAL
+        replication-key: MODIFICATION_DATE
+        key-properties: IDTASK_HAS_PRODUCT
+      EVS-TASK_HAS_RESOURCES:
+        replication-method: INCREMENTAL
+        replication-key: IDTASK
+      EVS-LABEL_HAS_TASK:
+        replication-method: INCREMENTAL
+        replication-key: IDTASK
+
+  loaders:
+  - name: target-postgres
+    variant: meltanolabs
+    pip_url: meltanolabs-target-postgres
+    config:
+      host: ${POSTGRES_HOST}
+      port: ${POSTGRES_PORT}
+      user: ${POSTGRES_USER}
+      password: ${POSTGRES_PASSWORD}
+      database: ${POSTGRES_DATABASE}
+      default_target_schema: ${POSTGRES_SCHEMA}
+      validate_records: false
+      batch_config:
+        encoding:
+          format: jsonl
+          compression: gzip
+        batch_size: 50000
+      max_batch_age: 600
+      batch_size_rows: 30000
+      flush_all_streams: true
+      add_record_metadata: true
+      hard_delete: false
+
+
+  utilities:
+  - name: dbt-postgres
+    variant: dbt-labs
+    pip_url: dbt-core dbt-postgres meltano-dbt-ext~=0.3.0
+    config:
+      host: echo.evs-pro.fr
+      port: 31415
+      user: echo
+      dbname: echo
+      schema: analytics

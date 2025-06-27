@@ -1,3 +1,5 @@
 /venv
 /.meltano
 .env
+.env.dev
+.env.prod

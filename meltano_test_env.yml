@@ -2,10 +2,83 @@ version: 1
 default_environment: dev
 project_id: 70d9670f-9691-400e-aaf2-49a378faa6d2
 
+# Configuration de la base de données système/metadata de Meltano
+database_uri: postgresql://${MELTANO_DB_USER}:${MELTANO_DB_PASSWORD}@${MELTANO_DB_HOST}:${MELTANO_DB_PORT}/meltano_system
+
+
 environments:
-- name: dev
-- name: staging
-- name: prod
+  - name: dev
+    state_id_suffix: dev
+    config:
+      plugins:
+        extractors:
+          - name: tap-rest-api-msdk
+            config:
+              # Répéter explicitement la configuration des streams
+              streams:
+                - name: yuman_clients
+                  path: /v1/clients
+                  records_path: $.items[*]
+                  primary_keys: [id]
+                  schema: extract/schemas/yuman_clients.json
+                  replication_key: updated_at
+                  paginator: page_number_paginator
+                  pagination_page_size: 50
+                  pagination_initial_offset: 1
+                  pagination_limit_per_page_param: per_page
+                  pagination_page_number_field: page
+                  # SUPPRIMÉ: next_page_token_path car on laisse le tap calculer automatiquement
+                  # AJOUTÉ: Configuration pour utiliser total_pages pour détecter la fin
+                  pagination_total_pages_path: $.total_pages
+                  params:
+                    per_page: 50
+                    embed: fields
+        loaders:
+          - name: target-postgres
+            config:
+              # Votre config loader actuelle...
+              host: ${POSTGRES_HOST_DEV}
+              port: ${POSTGRES_PORT_DEV}
+              user: ${POSTGRES_USER_DEV}
+              password: ${POSTGRES_PASSWORD_DEV}
+              database: ${POSTGRES_DATABASE_DEV}
+              batch_config:
+                batch_size: 1000
+              batch_size_rows: 1000
+              max_batch_age: 300
+    env:
+      MELTANO_LOG_LEVEL: DEBUG
+      BATCH_SIZE: "1000"
+
+  - name: prod
+    state_id_suffix: prod
+    config:
+      plugins:
+        extractors:
+          - name: tap-oracle
+            config:
+              # Configuration prod pour Oracle (garder les valeurs optimisées)
+              batch_config:
+                batch_size: 50000
+              query_timeout: 1800
+              connection_pool_size: 10
+        loaders:
+          - name: target-postgres
+            config:
+              # Configuration prod pour Postgres
+              host: ${POSTGRES_HOST_PROD}
+              port: ${POSTGRES_PORT_PROD}
+              user: ${POSTGRES_USER_PROD}
+              password: ${POSTGRES_PASSWORD_PROD}
+              database: ${POSTGRES_DATABASE_PROD}
+              batch_config:
+                batch_size: 50000
+              batch_size_rows: 30000
+              max_batch_age: 600
+    env:
+      # Variables d'environnement spécifiques à la prod
+      MELTANO_LOG_LEVEL: INFO
+      BATCH_SIZE: "50000"
 
 plugins:
   extractors:
@@ -33,7 +106,9 @@ plugins:
         pagination_initial_offset: 1
         pagination_limit_per_page_param: per_page
         pagination_page_number_field: page
-        next_page_token_path: $.page
+        # SUPPRIMÉ: next_page_token_path car on laisse le tap calculer automatiquement
+        # AJOUTÉ: Configuration pour utiliser total_pages pour détecter la fin
+        pagination_total_pages_path: $.total_pages
         params:
           per_page: 50
           embed: fields
@@ -134,7 +209,6 @@ plugins:
         params:
           per_page: 50
 
-
   - name: tap-oracle
     variant: s7clarke10
     pip_url: git+https://github.com/s7clarke10/pipelinewise-tap-oracle.git
@@ -145,16 +219,15 @@ plugins:
       user: EVS_RO
       password: ${ORACLE_PASSWORD}
       filter_schemas: EVS
-      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-LABEL_HAS_TASK]
+      filter_tables: [EVS-CONTACT, EVS-COMPANY, EVS-TASK_HAS_PRODUCT,EVS-TASK_HAS_RESOURCES,EVS-LABEL_HAS_TASK]
       ora_python_driver_type: thin
       default_replication_method: INCREMENTAL
-      # Optimisations Oracle pour batch processing
       batch_config:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 10000
-      stream_buffer_size: 10000
+        batch_size: 50000
+      stream_buffer_size: 8000
       query_timeout: 1800
       connection_pool_size: 10
     select:
@@ -168,6 +241,10 @@ plugins:
 
     # TABLE TASK_HAS_PRODUCT
     - EVS-TASK_HAS_PRODUCT.*
+
+    # TABLE TASK_HAS_RESOURCES
+    - EVS-TASK_HAS_RESOURCES.IDTASK
+    - EVS-TASK_HAS_RESOURCES.IDRESOURCES
 
     # TABLE LABEL_HAS_TASK
     - EVS-LABEL_HAS_TASK.*
@@ -184,6 +261,9 @@ plugins:
         replication-method: INCREMENTAL
         replication-key: MODIFICATION_DATE
         key-properties: IDTASK_HAS_PRODUCT
+      EVS-TASK_HAS_RESOURCES:
+        replication-method: INCREMENTAL
+        replication-key: IDTASK
       EVS-LABEL_HAS_TASK:
         replication-method: INCREMENTAL
         replication-key: IDTASK
@@ -204,13 +284,12 @@ plugins:
         encoding:
           format: jsonl
           compression: gzip
-        batch_size: 10000
-      max_batch_age: 300
-      batch_size_rows: 5000
+        batch_size: 50000
+      max_batch_age: 600
+      batch_size_rows: 30000
       flush_all_streams: true
       add_record_metadata: true
       hard_delete: false
-
 
   utilities:
   - name: dbt-postgres

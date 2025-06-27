@@ -27,6 +27,6 @@ clean-targets:
 models:
   my_meltano_project:
     staging:
-      +schema: staging
+      +schema: analytics_staging
     marts:
-      +schema: marts
+      +schema: analytics_marts
