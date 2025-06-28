@@ -1,5 +1,5 @@
 # .github/workflows/build.yml
-name: Build Docker Image
+name: Build and Test Docker Image
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build:
+  build-and-test:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -39,3 +39,42 @@ jobs:
         tags: |
           ${{ env.REGISTRY }}/${{ steps.lowercase.outputs.repo_name }}:${{ github.ref_name }}
           ${{ env.REGISTRY }}/${{ steps.lowercase.outputs.repo_name }}:latest
+
+    - name: Run dbt tests
+      env:
+        # All your DEV database credentials
+        DBT_POSTGRES_HOST: ${{ secrets.DBT_POSTGRES_HOST }}
+        DBT_POSTGRES_PORT: ${{ secrets.DBT_POSTGRES_PORT }}
+        DBT_POSTGRES_USER: ${{ secrets.DBT_POSTGRES_USER }}
+        DBT_POSTGRES_PASSWORD: ${{ secrets.DBT_POSTGRES_PASSWORD }}
+        DBT_POSTGRES_DBNAME: ${{ secrets.DBT_POSTGRES_DBNAME }}
+        POSTGRES_HOST_DEV: ${{ secrets.POSTGRES_HOST_DEV }}
+        POSTGRES_PORT_DEV: ${{ secrets.POSTGRES_PORT_DEV }}
+        POSTGRES_USER_DEV: ${{ secrets.POSTGRES_USER_DEV }}
+        POSTGRES_PASSWORD_DEV: ${{ secrets.POSTGRES_PASSWORD_DEV }}
+        POSTGRES_DATABASE_DEV: ${{ secrets.POSTGRES_DATABASE_DEV }}
+        POSTGRES_SCHEMA_DEV: ${{ secrets.POSTGRES_SCHEMA_DEV }}
+      run: |
+        # Create a temporary .env file for testing
+        cat > .env.test << EOF
+        DBT_POSTGRES_HOST=$DBT_POSTGRES_HOST
+        DBT_POSTGRES_PORT=$DBT_POSTGRES_PORT
+        DBT_POSTGRES_USER=$DBT_POSTGRES_USER
+        DBT_POSTGRES_PASSWORD=$DBT_POSTGRES_PASSWORD
+        DBT_POSTGRES_DBNAME=$DBT_POSTGRES_DBNAME
+        POSTGRES_HOST_DEV=$POSTGRES_HOST_DEV
+        POSTGRES_PORT_DEV=$POSTGRES_PORT_DEV
+        POSTGRES_USER_DEV=$POSTGRES_USER_DEV
+        POSTGRES_PASSWORD_DEV=$POSTGRES_PASSWORD_DEV
+        POSTGRES_DATABASE_DEV=$POSTGRES_DATABASE_DEV
+        POSTGRES_SCHEMA_DEV=$POSTGRES_SCHEMA_DEV
+        EOF
+        
+        # Run dbt tests with dev environment
+        docker run --rm \
+          --env-file .env.test \
+          ${{ env.REGISTRY }}/${{ steps.lowercase.outputs.repo_name }}:${{ github.ref_name }} \
+          --environment=dev invoke dbt-postgres:test
+        
+        # Clean up
+        rm .env.test
