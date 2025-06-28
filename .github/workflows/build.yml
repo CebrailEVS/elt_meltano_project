@@ -1,5 +1,5 @@
 # .github/workflows/build.yml
-name: Build Docker Image
+name: build_docker_image
 
 on:
   push:
