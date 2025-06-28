@@ -77,7 +77,6 @@ plugins:
             embed: fields
 
 
-
   - name: tap-yuman-default
     inherit_from: tap-rest-api-msdk
     executable: tap-rest-api-msdk
