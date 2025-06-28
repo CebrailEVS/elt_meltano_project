@@ -33,20 +33,20 @@ jobs:
         echo "POSTGRES_DATABASE=${{ secrets.POSTGRES_DATABASE_DEV }}" >> $GITHUB_ENV
         echo "POSTGRES_SCHEMA=${{ secrets.POSTGRES_SCHEMA_DEV }}" >> $GITHUB_ENV
     
-        - name: Set up Meltano
-          run: |
-            pip install meltano
-            meltano install
+    - name: Set up Meltano
+      run: |
+        pip install meltano
+        meltano install
 
-        - name: Initialize dbt project (si pas déjà présent)
-          run: |
-            meltano invoke dbt-postgres:initialize
-          continue-on-error: true  # utile pour ne pas planter si déjà initialisé
+    - name: Initialize dbt project (si pas déjà présent)
+      run: |
+        meltano invoke dbt-postgres:initialize
+      continue-on-error: true  # utile pour ne pas planter si déjà initialisé
 
-        - name: Run dbt compile
-          run: |
-            meltano invoke dbt-postgres:compile
+    - name: Run dbt compile
+      run: |
+        meltano invoke dbt-postgres:compile
 
-        - name: Run dbt tests
-          run: |
-            meltano invoke dbt-postgres:test
+    - name: Run dbt tests
+      run: |
+        meltano invoke dbt-postgres:test
