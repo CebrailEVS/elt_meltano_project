@@ -42,7 +42,6 @@ jobs:
 
     - name: Run dbt tests
       env:
-        # All your DEV database credentials
         DBT_POSTGRES_HOST: ${{ secrets.DBT_POSTGRES_HOST }}
         DBT_POSTGRES_PORT: ${{ secrets.DBT_POSTGRES_PORT }}
         DBT_POSTGRES_USER: ${{ secrets.DBT_POSTGRES_USER }}
@@ -69,12 +68,18 @@ jobs:
         POSTGRES_DATABASE_DEV=$POSTGRES_DATABASE_DEV
         POSTGRES_SCHEMA_DEV=$POSTGRES_SCHEMA_DEV
         EOF
-        
-        # Run dbt tests with dev environment
+
+        # Run dbt run
+        docker run --rm \
+          --env-file .env.test \
+          ${{ env.REGISTRY }}/${{ steps.lowercase.outputs.repo_name }}:${{ github.ref_name }} \
+          --environment=dev invoke dbt-postgres:run
+
+        # Run dbt tests
         docker run --rm \
           --env-file .env.test \
           ${{ env.REGISTRY }}/${{ steps.lowercase.outputs.repo_name }}:${{ github.ref_name }} \
           --environment=dev invoke dbt-postgres:test
-        
+
         # Clean up
         rm .env.test
