@@ -76,6 +76,59 @@ plugins:
             per_page: 50
             embed: fields
 
+        - name: yuman_sites
+          path: /v1/sites
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+            embed: fields
+
+        - name: yuman_materials
+          path: /v1/materials
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+            embed: fields
+
+        - name: yuman_products
+          path: /v1/products
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+            embed: fields
+
+        - name: yuman_workorders
+          path: /v1/workorders
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+            embed: fields,products,technician
+
+        - name: yuman_workorder_demands
+          path: /v1/workorder_demands
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+            embed: fields
+
+        - name: yuman_users
+          path: /v1/users
+          primary_keys: [id]
+          records_path: $.items[*]
+          replication_key: updated_at
+          params:
+            per_page: 50
+
 
   - name: tap-yuman-default
     inherit_from: tap-rest-api-msdk
